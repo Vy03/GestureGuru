@@ -1,0 +1,101 @@
+
+
+/* Optional: Add styles to ensure content is centered */
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for logo and content */
+.logo-container {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+}
+
+/* Logo styling */
+.logo {
+  margin-right: 20px; /* Adjust spacing between logo and content */
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Optional: Make the logo image round */
+}
+
+/* Content container for heading and paragraph */
+.content {
+  text-align: left; /* Align text to the left */
+}
+
+.login-container {
+  width: 100%; /* Full width of viewport */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+}
+  
+  .login-form {
+    width: 400px;
+    padding: 24px;
+    align-items: center;
+  }
+  
+  .form-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 400px;
+    margin: auto; /* Center the form on the page */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    margin: 20px 0; /* Add some margin for spacing */
+  }
+  
+  .form-group label {
+    margin-bottom: 8px; /* Space between the label and input */
+    font-size: 1rem;
+    color: #31363F;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px; /* Space between label and input */
+  }
+  
+  .form-group .form-control {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .login-button, .google-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #76ABAE;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .google-button {
+    background-color: #db4437;
+  }
+  
+  .google-button:hover, .login-button:hover {
+    opacity: 0.8;
+  }
+  

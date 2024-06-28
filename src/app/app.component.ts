@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from "./footer/footer.component";
@@ -13,4 +14,5 @@ import { ContentLandpageComponent } from "./content-landpage/content-landpage.co
 })
 export class AppComponent {
   title = 'testproyek';
+  constructor(public router: Router) {}
 }
