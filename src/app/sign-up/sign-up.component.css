@@ -5,35 +5,32 @@ body, html {
   align-items: center;
 }
 
-/* Container for logo and content */
 .logo-container {
   display: flex;
-  align-items: center; /* Vertical alignment */
+  align-items: center; 
 }
 
-/* Logo styling */
 .logo {
-  margin-right: 20px; /* Adjust spacing between logo and content */
+  margin-right: 20px; 
 }
 
 .logo img {
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* Optional: Make the logo image round */
+  border-radius: 50%; 
 }
 
-/* Content container for heading and paragraph */
 .content {
-  text-align: left; /* Align text to the left */
+  text-align: left; 
 }
 
-.login-container {
-  width: 100%; /* Full width of viewport */
+.signup-container {
+  width: 100%; 
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center; 
 }
   
-  .login-form {
+  .signup-form {
     width: 400px;
     padding: 24px;
     align-items: center;
@@ -44,17 +41,17 @@ body, html {
     padding: 0;
     margin: 0;
     width: 400px;
-    margin: auto; /* Center the form on the page */
+    margin: auto; 
   }
   
   .form-group {
     display: flex;
-    flex-direction: column; /* Align items in a column */
-    margin: 20px 0; /* Add some margin for spacing */
+    flex-direction: column; 
+    margin: 20px 0; 
   }
   
   .form-group label {
-    margin-bottom: 8px; /* Space between the label and input */
+    margin-bottom: 8px; 
     font-size: 1rem;
     color: #31363F;
   }
@@ -62,7 +59,7 @@ body, html {
   label {
     display: block;
     font-size: 16px;
-    margin-bottom: 4px; /* Space between label and input */
+    margin-bottom: 4px; 
   }
   
   .form-group .form-control {
@@ -76,7 +73,7 @@ body, html {
     font-weight: bold;
   }
   
-  .login-button, .google-button {
+  .signup-button, .google-button {
     width: 100%;
     padding: 12px;
     margin-top: 12px;
@@ -92,7 +89,7 @@ body, html {
     background-color: #db4437;
   }
   
-  .google-button:hover, .login-button:hover {
+  .google-button:hover, .signup-button:hover {
     opacity: 0.8;
   }
 
@@ -105,4 +102,3 @@ body, html {
   p a:hover {
     text-decoration: none;
   }
-  
