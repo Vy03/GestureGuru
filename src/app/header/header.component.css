@@ -1,32 +1,37 @@
 header {
-    width: 100%;
-    height: 64px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: top 0.3s ease-in-out;
-  }
-  
-  header h1 {
-    font-size: 20px;
-    color: #31363F;
-  }
-  
-  header .login {
-    margin-right: 60px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #76ABAE;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: top 0.3s ease-in-out;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+header .login {
+  margin-right: 60px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #4442B4;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

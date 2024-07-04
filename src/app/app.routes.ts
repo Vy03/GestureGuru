@@ -4,12 +4,13 @@ import { LoginComponent } from './login/login.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
+import { SettingsComponent } from './settings/settings.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about-us', component: AboutUsComponent }, 
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'home', component: HomeComponent},
-
+  { path: 'home', component: HomeComponent },
+  { path: 'settings', component: SettingsComponent },
 ];

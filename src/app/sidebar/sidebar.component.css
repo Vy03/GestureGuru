@@ -28,7 +28,7 @@ body {
 
 .menu-items {
   list-style-type: none;
-  padding: 0;
+  padding: 12px;
   margin: 0;
 }
 
@@ -52,7 +52,7 @@ body {
 .menu-items li a.active {
   border-radius: 5px;
   background-color: #e9ecef;
-  color: #007bff;
+  color: #4442B4;
 }
 
 .menu-items li a i {

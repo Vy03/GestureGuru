@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
+// import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-content-landpage',
@@ -18,5 +18,9 @@ export class ContentLandpageComponent {
 
   navigateToHome(){
     this.router.navigate(['/home']);
+  }
+
+  navigateToSet(){
+    this.router.navigate(['/settings']);
   }
 }

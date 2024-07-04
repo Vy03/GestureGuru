@@ -20,14 +20,14 @@ main h2 {
 
 main p {
     font-size: 1.1rem;
-    color: #828282;
+    color: #31363F;
     margin-bottom: 20px;
 }
 
 main .sign-up{
     font-size: 1rem;
     color: #fff;
-    background-color: #76ABAE;
+    background-color: #4442B4;
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
@@ -54,14 +54,14 @@ main .sign-up{
 
 .text-section p {
     font-size: 24px;
-    color: #828282;
+    color: #31363F;
 }
 
 .image-section {
     margin-right: 80px; 
     flex: 1;
     text-align: right;
-    border: #76ABAE;
+    border: #4442B4;
     border-radius: 8px;
 }
 
@@ -121,7 +121,7 @@ main .sign-up{
 
 .feature p {
     font-size: 20px;
-    color: #828282;
+    color: #31363F;
 }
 
 .review-head {
@@ -139,7 +139,7 @@ main .sign-up{
 .review-head p {
     font-size: 24px;
     margin-bottom: 8px; /* Space between p and cards */
-    color: #828282;
+    color: #31363F;
 }
 
 .reviews {

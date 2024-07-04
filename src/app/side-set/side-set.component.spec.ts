@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HomeComponent } from './home.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+import { SideSetComponent } from './side-set.component';
+
+describe('SideSetComponent', () => {
+  let component: SideSetComponent;
+  let fixture: ComponentFixture<SideSetComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeComponent]
+      imports: [SideSetComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(SideSetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

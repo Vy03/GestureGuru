@@ -1,1 +1,57 @@
 <app-sidebar></app-sidebar>
+<div class="main-content">
+  <header>
+    <h1>Home</h1>
+    <p>Search</p>
+  </header>
+  <div class="content">
+    <h1>Welcome back, (User)!</h1>
+    <p>Tons of lessons are waiting for you</p>
+
+    <div class="grid-container">
+      <div class="lessons">
+        <h2>Lessons</h2>
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Difficulty</th>
+            <th>Status</th>
+          </tr>
+          <tr *ngFor="let lesson of lessons">
+            <td>{{ lesson.title }}</td>
+            <td>{{ lesson.difficulty }}</td>
+            <!-- <td><span class="status-dot" [ngClass]="lesson.status"></span></td> -->
+          </tr>
+        </table>
+      </div>
+
+      <div class="achievements">
+        <h2>Recent Achievements</h2>
+        <div *ngFor="let achievement of achievements" class="achievement">
+          <!-- <i class="fa" [ngClass]="achievement.icon"></i> -->
+          <span>{{ achievement.title }}</span>
+        </div>
+      </div>
+
+      <div class="performance">
+        <h2>Your performance</h2>
+        <p>Performance chart placeholder</p>
+      </div>
+
+      <div class="mission">
+        <h2>Daily Mission</h2>
+        <div class="progress-ring">
+          <svg>
+            <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+          </svg>
+          <div class="progress-text">1 out of 4</div>
+        </div>
+        <ul class="mission-list">
+          <li *ngFor="let mission of missions">
+            <!-- <span class="status-dot" [ngClass]="mission.status"></span> {{ mission.text }} -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
