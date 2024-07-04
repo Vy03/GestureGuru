@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  display: flex;
+  /* display: flex; */
   height: 134px;
   justify-content: space-between;
   align-items: center;
@@ -20,14 +20,12 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header .logo img {
-  width: 50px;
-  height: 50px;
-}
-
 header .search-bar {
-  flex-grow: 1;
-  margin: 0 20px;
+  margin-left: 48px;
+  width: 405px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
   padding: 10px;
   font-size: 16px;
 }
@@ -43,11 +41,12 @@ header .login {
 }
 
 .content {
-  padding: 20px;
+  padding: 48px;
 }
 
 .content h1 {
   font-size: 24px;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -74,29 +73,12 @@ header .login {
 
 .lessons, .achievements, .performance, .mission {
   background-color: #fff;
-  padding: 12px; /* Padding of 24px */
+  padding: 24px; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
-.lessons {
-  /* width: 372px; Specific width for lessons */
-  /* height: 510px; Specific height for lessons */
-}
-
-.achievements {
-  /* width: 440px; /* Specific width for recent achievements */
-  /* height: 206px; Specific height for recent achievements */ 
-}
-
-.performance {
-  /* width: 440px; Specific width for your performance */
-  /* height: 280px; Specific height for your performance */
-}
-
 .mission {
-  /* width: 236px; Specific width for daily mission */
-  /* height: 510px; Specific height for daily mission */
   grid-row: span 2; /* Span two rows in the grid */
 }
 
