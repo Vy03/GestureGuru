@@ -1,8 +1,8 @@
 <app-sidebar></app-sidebar>
 <div class="main-content">
   <header>
-    <h1>Home</h1>
-    <p>Search</p>
+    <h3 style="font-size: 24px;">Home</h3>
+    <input type="text" class="search-bar" placeholder="Search">
   </header>
   <div class="content">
     <h1>Welcome back, (User)!</h1>
@@ -12,46 +12,58 @@
       <div class="lessons">
         <h2>Lessons</h2>
         <table>
-          <tr>
-            <th>Title</th>
-            <th>Difficulty</th>
-            <th>Status</th>
-          </tr>
-          <tr *ngFor="let lesson of lessons">
-            <td>{{ lesson.title }}</td>
-            <td>{{ lesson.difficulty }}</td>
-            <!-- <td><span class="status-dot" [ngClass]="lesson.status"></span></td> -->
-          </tr>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Difficulty</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1</td>
+              <td>123</td>
+              <td><span class="status-dot green"></span></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
         </table>
       </div>
 
-      <div class="achievements">
-        <h2>Recent Achievements</h2>
-        <div *ngFor="let achievement of achievements" class="achievement">
-          <!-- <i class="fa" [ngClass]="achievement.icon"></i> -->
-          <span>{{ achievement.title }}</span>
+      <div>
+        <div class="achievements" style="margin-bottom: 24px;">
+          <h2>Recent Achievements</h2>
+          <div class="achievement">
+            <i class="fas fa-trophy"></i>
+            <span>Perfection</span>
+          </div>
+          <!-- Add more achievements as needed -->
         </div>
-      </div>
-
-      <div class="performance">
-        <h2>Your performance</h2>
-        <p>Performance chart placeholder</p>
-      </div>
-
+  
+        <div class="performance">
+          <h2>Your performance</h2>
+          <!-- Add performance chart here -->
+        </div>
+      </div>      
       <div class="mission">
         <h2>Daily Mission</h2>
         <div class="progress-ring">
-          <svg>
-            <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+          <!-- <svg>
+            <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"></circle>
           </svg>
-          <div class="progress-text">1 out of 4</div>
+          <span class="progress-text">1 out of 4</span> -->
+          <div class="circle">
+            <p>1 out of 4</p>
+          </div>
         </div>
         <ul class="mission-list">
-          <li *ngFor="let mission of missions">
-            <!-- <span class="status-dot" [ngClass]="mission.status"></span> {{ mission.text }} -->
-          </li>
+          <li><span class="status-dot green"></span> Log in today</li>
+          <li><span class="status-dot green"></span> Learn one lesson</li>
+          <li><span class="status-dot"></span> Learn two lessons</li>
+          <li><span class="status-dot"></span> Achieve 100% accuracy at least one time</li>
         </ul>
       </div>
+
     </div>
   </div>
 </div>
