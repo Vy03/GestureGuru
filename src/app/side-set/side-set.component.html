@@ -12,19 +12,19 @@
     <p style="font-size: 20px; color: #31363F; margin-left: 24px;">Settings</p>
     <ul class="menu-items">
       <li>
-        <a href="#" routerLink="/settings" routerLinkActive="active">
+        <a (click)="navigateToSet()" routerLink="/settings" routerLinkActive="active">
           <i class="fa-solid fa-user"></i>
           <span>Profile</span>
         </a>
       </li>
       <li>
-        <a href="#" routerLink="/notifications" routerLinkActive="active">
+        <a (click)="navigateToNotif()" routerLink="/notif-set" routerLinkActive="active">
           <i class="fa-solid fa-bell"></i>
           <span>Notifications</span>
         </a>
       </li>
       <li>
-        <a href="#" routerLink="/feedback" routerLinkActive="active">
+        <a (click)="navigateToFeedback()" routerLink="/feedback" routerLinkActive="active">
           <i class="fa-solid fa-comments"></i>
           <span>Feedback</span>
         </a>
