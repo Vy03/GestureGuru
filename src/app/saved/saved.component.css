@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+  }
+  
+  .main-content {
+    margin-left: 256px; /* Adjust based on your sidebar width */
+    width: calc(100% - 256px);
+    padding: 0px;
+  }
+  
+  header {
+    /* display: flex; */
+    height: 134px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  header .search-bar {
+    margin-left: 48px;
+    width: 405px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    font-size: 16px;
+  }

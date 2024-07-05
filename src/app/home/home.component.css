@@ -30,16 +30,6 @@ header .search-bar {
   font-size: 16px;
 }
 
-header .login {
-  font-size: 1rem;
-  color: #fff;
-  background-color: #4442B4;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .content {
   padding: 48px;
 }
