@@ -1,63 +1,96 @@
 body {
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .sidebar {
-    box-shadow: #495057;
-    width: 256px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #fff;
-    padding-left: 8px;
-    padding-right: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .sidebar-logo img {
-    margin-top: 24px; 
-    margin-bottom: 24px;
-  }
-  
-  .sidebar-menu {
-    width: 100%;
-    margin-bottom: 200px;
-  }
-  
-  .menu-items {
-    list-style-type: none;
-    padding: 12px;
-    margin: 0;
-  }
-  
-  .menu-items li {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  
-  .menu-items li a {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    color: #495057;
-    text-decoration: none;
-    font-size: 16px;
-    font-size: 20px; /* Updated font size */
-    transition: background-color 0.3s;
-  }
-  
-  .menu-items li a:hover,
-  .menu-items li a.active {
-    border-radius: 5px;
-    background-color: #e9ecef;
-    color: #4442B4;
-  }
-  
-  .menu-items li a i {
-    margin-right: 16px;
-    font-size: 20px;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  box-shadow: #495057;
+  width: 256px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-logo img {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.sidebar-menu {
+  width: 100%;
+  flex-grow: 1; /* Makes the menu items take up remaining space */
+}
+
+.menu-items {
+  list-style-type: none;
+  padding: 12px;
+  margin: 0;
+  width: 100%; /* Ensure the menu items take the full width */
+}
+
+.menu-items li {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.menu-items li a {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  color: #495057;
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 20px; /* Updated font size */
+  transition: background-color 0.3s;
+  width: 100%; /* Ensure the links take the full width */
+}
+
+.menu-items li a:hover,
+.menu-items li a.active {
+  border-radius: 5px;
+  background-color: #e9ecef;
+  color: #4442B4;
+}
+
+.menu-items li a i {
+  margin-right: 16px;
+  font-size: 20px;
+}
+
+.sidebar-button {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  color: #495057;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 16px;
+  transition: background-color 0.3s;
+  width: 100%; /* Ensure the buttons take the full width */
+}
+
+.sidebar-button:hover,
+.sidebar-button.active {
+  border-radius: 5px;
+  background-color: #e9ecef;
+  color: #4442B4;
+}
+
+.sidebar-button i {
+  margin-right: 16px;
+  font-size: 20px;
+}
+
+.logout-button {
+  margin-bottom: 64px; /* Add margin-bottom directly here */
+}
+
+.sidebar-bottom {
+  width: 100%;
+}

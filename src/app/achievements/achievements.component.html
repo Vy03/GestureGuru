@@ -4,4 +4,17 @@
       <h3 style="font-size: 24px; margin-left: 48px;">Achievements</h3>
       <input type="text" class="search-bar" placeholder="Search">
     </header>
+    <div class="achievements-page">
+      <div class="achievements-content">
+        <div class="achievements-grid">
+          <div class="achievement-card" *ngFor="let achievement of achievements">
+            <i class="fa fa-trophy"></i>
+            <h3>Perfection</h3>
+            <p>1/10</p>
+            <p>Achieve 100% accuracy 10 times</p>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
+

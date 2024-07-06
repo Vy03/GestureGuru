@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+  constructor(private router: Router) {}
 
+  navigateToAbout() {
+    this.router.navigate(['/about-us']);
+  }
 }
