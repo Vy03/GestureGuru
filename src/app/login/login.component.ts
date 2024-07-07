@@ -15,6 +15,10 @@ export class LoginComponent {
 
   constructor(private router: Router) {}
 
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+  
   navigateToSignup() {
     this.router.navigate(['/sign-up']);
   }
