@@ -1,0 +1,96 @@
+.lesson-view-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .back-btn {
+    align-self: flex-start;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: 2px solid #4442B4;
+    border-radius: 5px;
+    color: #4442B4;
+  }
+  
+  .content {
+    display: flex;
+    width: 100%;
+  }
+  
+  .sidebar {
+    flex: 1;
+    max-width: 450px; /* Update the width of the sidebar */
+    border-right: 1px solid #ccc;
+  }
+  
+  .progress {
+    padding: 20px;
+  }
+  
+  .progress-item {
+    display: flex;
+    align-items: center;
+    text-align: left; /* Ensure text is left-aligned */
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .progress-item.active {
+    background-color: #f0f0f0;
+  }
+  
+  .progress-item i {
+    margin-right: 20px; /* Add space between icon and text */
+  }
+  
+  .progress-item .level {
+    margin-left: auto; /* Align the level badge to the right */
+    background-color: #4CAF50;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 5px;
+  }
+  
+  .main {
+    flex: 2; /* Adjust the flex ratio to make main content smaller */
+    padding: 20px;
+  }
+  
+  .video-container {
+    margin-bottom: 20px;
+  }
+  
+  video {
+    width: 100%;
+    max-width: 100%; /* Set a max width for the video */
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .lesson-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4442B4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+  

@@ -14,6 +14,7 @@ import { StatisticsComponent } from './app/statistics/statistics.component';
 import { NotificationComponent } from './app/notification/notification.component';
 import { SavedComponent } from './app/saved/saved.component';
 import { AchievementsComponent } from './app/achievements/achievements.component';
+import { LessonViewComponent } from './app/lesson-view/lesson-view.component';
 
 const routes: Routes = [
   //Setting up account / login
@@ -29,6 +30,10 @@ const routes: Routes = [
   { path: 'notifications', component: NotificationComponent},
   { path: 'saved', component: SavedComponent},
   { path: 'achievements', component: AchievementsComponent},
+
+    //video
+    { path: 'view', component: LessonViewComponent},
+
 
   //Settings
   { path: 'settings', component: SettingsComponent }, //setting profile98

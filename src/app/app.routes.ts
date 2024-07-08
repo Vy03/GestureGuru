@@ -9,6 +9,7 @@ import { NotificationSettingsComponent } from './notification-settings/notificat
 import { FeedbackComponent } from './feedback/feedback.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { LessonViewComponent } from './lesson-view/lesson-view.component';
 import { NotificationComponent } from './notification/notification.component';
 import { SavedComponent } from './saved/saved.component';
 import { AchievementsComponent } from './achievements/achievements.component';
@@ -27,6 +28,9 @@ export const routes: Routes = [
   { path: 'notifications', component: NotificationComponent},
   { path: 'saved', component: SavedComponent},
   { path: 'achievements', component: AchievementsComponent},
+
+  //video
+  { path: 'view', component: LessonViewComponent},
 
   //Settings
   { path: 'settings', component: SettingsComponent }, //setting profile98

@@ -29,3 +29,24 @@ body {
     padding: 10px;
     font-size: 16px;
   }
+
+  .notification-list {
+    margin-top: 24px;
+    margin-left: 50px;
+}
+
+.notification-list li {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+}
+
+.notification-list .dot {
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 16px;
+}

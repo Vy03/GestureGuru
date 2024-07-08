@@ -23,4 +23,8 @@ export class ContentLandpageComponent {
   navigateToSet(){
     this.router.navigate(['/settings']);
   }
+
+  navigateToView(){
+    this.router.navigate(['/view']);
+  }
 }
