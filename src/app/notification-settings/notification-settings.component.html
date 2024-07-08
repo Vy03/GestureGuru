@@ -1,28 +1,44 @@
 <app-side-set></app-side-set>
-<div class="settings-container">  
-    <div class="notif-container">
-      <header>
-        <h1>Notification</h1>
-      </header>
-      <form>
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" value="@username123">
+<div class="settings-container">
+  <div class="notif-container">
+    <header>
+      <h1>Notification</h1>
+    </header>
+    <form>
+      <div class="form-group d-flex justify-content-between align-items-center">
+        <div>
+          <h5>Daily reminders</h5>
+          <p>Lorem ipsum dolor sit amet</p>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" value="email@domain.com">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="dailyReminders" checked>
+          <label class="form-check-label" for="dailyReminders"></label>
         </div>
-        <div class="form-group">
-          <label for="bio">Bio</label>
-          <textarea id="bio" name="bio" style="height: 180px;">Lorem ipsum dolor sit amet</textarea>
+      </div>
+      <div class="form-group d-flex justify-content-between align-items-center">
+        <div>
+          <h5>Email notification</h5>
+          <p>Lorem ipsum dolor sit amet</p>
         </div>
-
-        <div class="footer-button">
-          <button type="submit" class="save-button">Save changes</button>
-          <button type="submit" class="save-button">Cancel</button>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+          <label class="form-check-label" for="emailNotification"></label>
         </div>
-        
-      </form>
-    </div>
+      </div>
+      <div class="form-group d-flex justify-content-between align-items-center">
+        <div>
+          <h5>Special promotions</h5>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="specialPromotions" checked>
+          <label class="form-check-label" for="specialPromotions"></label>
+        </div>
+      </div>
+      <div class="footer-button d-flex justify-content-start mt-4">
+        <button type="submit" class="save-button me-2">Save changes</button>
+        <button type="button" class="cancel-button">Cancel</button>
+      </div>
+    </form>
   </div>
+</div>
