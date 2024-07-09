@@ -29,3 +29,74 @@ body {
     padding: 10px;
     font-size: 16px;
   }
+
+  .lessons-table {
+    width: 100%;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.lessons-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lessons-table th, .lessons-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.lessons-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.lessons-table td:last-child, .lessons-table th:last-child {
+    text-align: center;
+}
+
+.type {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #000;
+    font-size: 16px;
+}
+
+.type.beginner {
+    background-color: #7aba7873;
+}
+
+.type.intermediate {
+    background-color: #ffc107;
+}
+
+.type.advanced {
+    background-color: #dc3545;
+}
+
+.flag {
+    display: inline-block;
+    width: 20px;
+    height: 20px; /* Replace with your flag icon */
+    background-size: contain;
+}
+
+.progress {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.progress.completed {
+    background-color: #28a745;
+}
+
+.progress.not-completed {
+    background-color: #6c757d;
+}

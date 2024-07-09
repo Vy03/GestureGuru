@@ -32,15 +32,15 @@ export class SideSetComponent {
     this.router.navigate(['/feedback']);
   }
 
-  openLogoutModal() {
-    const modalElement = document.getElementById('logoutModal');
-    const modal = new bootstrap.Modal(modalElement);
-    modal.show();
-  }
+  // openLogoutModal() {
+  //   const modalElement = document.getElementById('logoutModal');
+  //   const modal = new bootstrap.Modal(modalElement);
+  //   modal.show();
+  // }
   
   logout() {
     // Implement logout logic here
-    this.router.navigate(['/landing']); // Redirect to login page after logout
+    this.router.navigate(['']); // Redirect to login page after logout
   }
 
 }

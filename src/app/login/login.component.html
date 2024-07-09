@@ -13,11 +13,6 @@
   
       <ul class="form-list">
         <li class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" class="form-control" placeholder="@johnsmith">
-        </li>
-
-        <li class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" class="form-control" placeholder="johnsmith@example.com">
         </li>
@@ -26,17 +21,12 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" class="form-control" placeholder="">
         </li>
-        
-        <li class="form-group">
-          <label for="confirm-password">Confirm Password</label>
-          <input type="password" id="confirm-password" name="confirmPassword" class="form-control" placeholder="Confirm your password">
-        </li>
       </ul>
       
   
       <button class="login-button" (click)="navigateToHome()">Log In</button>
   
-      <p>or continue with</p>
+      <p style="text-align: center;">or continue with</p>
   
       <button class="google-button" (click)="navigateToHome()">Sign in with Google</button>
   
