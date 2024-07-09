@@ -39,28 +39,46 @@ header .search-bar {
 .box-container {
   display: flex;
   width: 100%;
-  height: 30vh; /* 40% of the viewport height */
+  height: 40vh; /* 40% of the viewport height */
 }
 
 .box {
-  background-color: #f0f0f0; /* Just for visual purposes, you can change this */
+  background-color: #fff; /* Just for visual purposes, you can change this */
   margin-right: 20px; /* Space between boxes */
+  padding-top: 16px;
+  padding-left: 24px;
 }
 
-.box1 {
+.daily {
   width: 70%;
-  height: 30vh;
+  height: 40vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-.box2 {
+.avg {
   width: 30%;
-  height: 30vh;
+  height: 40vh;
   margin-right: 0; /* Remove margin from the last box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-.box3 {
+.stats {
   width: 100%;
   height: 40vh; /* 50% of the viewport height */
-  background-color: #d0d0d0; /* Just for visual purposes, you can change this */
+  background-color: #fff; /* Just for visual purposes, you can change this */
   margin-top: 20px; /* Space between box-container and box3 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.box-container .box h3 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.box.stats h3 {
+  font-weight: bold;
+  font-size: 24px;
 }

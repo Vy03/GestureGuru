@@ -116,13 +116,18 @@ header .search-bar {
 .performance {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .mission {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.mission .left-align {
+  align-self: flex-start;
+  text-align: left;
 }
 
 .progress-ring {
