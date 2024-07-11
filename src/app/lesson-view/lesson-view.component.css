@@ -51,8 +51,8 @@
   
   .progress-item .level {
     margin-left: auto; /* Align the level badge to the right */
-    background-color: #4CAF50;
-    color: white;
+    background-color: #7aba7873;
+    color: black;
     padding: 3px 7px;
     border-radius: 5px;
   }

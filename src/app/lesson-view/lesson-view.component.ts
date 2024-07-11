@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lesson-view',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './lesson-view.component.css'
 })
 export class LessonViewComponent {
-
+  constructor(private router: Router) {}
+  
+  navigateToWebcam(){
+    this.router.navigate(['/webcam']);
+  }
 }
