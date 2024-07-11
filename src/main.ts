@@ -15,6 +15,7 @@ import { NotificationComponent } from './app/notification/notification.component
 import { SavedComponent } from './app/saved/saved.component';
 import { AchievementsComponent } from './app/achievements/achievements.component';
 import { LessonViewComponent } from './app/lesson-view/lesson-view.component';
+import { WebcamComponent } from './app/webcam/webcam.component';
 
 const routes: Routes = [
   //Setting up account / login
@@ -33,6 +34,7 @@ const routes: Routes = [
 
     //video
     { path: 'view', component: LessonViewComponent},
+    { path: 'webcam', component: WebcamComponent},
 
 
   //Settings

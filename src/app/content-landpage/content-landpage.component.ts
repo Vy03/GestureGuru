@@ -27,4 +27,8 @@ export class ContentLandpageComponent {
   navigateToView(){
     this.router.navigate(['/view']);
   }
+
+  navigateToWebcam(){
+    this.router.navigate(['/webcam']);
+  }
 }
