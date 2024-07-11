@@ -75,6 +75,7 @@ header .search-bar {
 }
 
 .grid-container {
+  width: 100%;
   display: grid;
   grid-template-columns: auto 45% 1fr; /* Three columns with custom widths */
   grid-gap: 0px;
@@ -91,6 +92,25 @@ header .search-bar {
   padding: 24px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+}
+
+.type {
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #000;
+  font-size: 16px;
+}
+
+.type.beginner {
+  background-color: #7aba7873;
+}
+
+.type.intermediate {
+  background-color: #ffc1077a;
+}
+
+.type.advanced {
+  background-color: #dc354681;
 }
 
 .achievements, .performance {
@@ -124,21 +144,35 @@ header .search-bar {
 
 .status-dot {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.lessons table td.centered {
+  text-align: center;
+  vertical-align: middle;
 }
 
 .status-dot.green {
-  background-color: green;
+  background-color: #7ABA78;
 }
 
 .status-dot.yellow {
-  background-color: yellow;
+  background-color: #F3CA52;
 }
 
 .status-dot.red {
-  background-color: red;
+  background-color: #E15E54;
+}
+
+.status-dot.purple {
+  background-color: #618CCC;
+}
+
+.status-dot.grey {
+  background-color: #B3B3B3;
 }
 
 .achievements .achievement {
@@ -166,12 +200,13 @@ header .search-bar {
 .mission .left-align {
   align-self: flex-start;
   text-align: left;
+  margin-bottom: 24px;
 }
 
 .progress-ring {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   margin-bottom: 20px;
 }
 
@@ -185,7 +220,7 @@ header .search-bar {
   width: 100%; /* Adjusted width to account for border */
   height: 100%; /* Adjusted height to account for border */
   border-radius: 50%;
-  border: 12px solid #4442B4;
+  border: 10px solid #4442B4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,6 +252,8 @@ header .search-bar {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  word-wrap: break-word; /* Allows text wrapping */
+  white-space: normal;
 }
 
 .mission-list .status-dot {
