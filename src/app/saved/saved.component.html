@@ -12,83 +12,152 @@
                   <th>Task</th>
                   <th>Title</th>
                   <th>Type</th>
-                  <th>Flag</th>
+                  <th class="centered">Flag</th>
                   <th>Progress</th>
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td>SIG-001</td>
-                  <td>Getting Started</td>
-                  <td><span class="type beginner">Beginner</span></td>
-                  <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
-                  <td><span class="progress not-completed"></span></td>
-              </tr>
-              <tr>
-                  <td>SIG-002</td>
-                  <td>Hello</td>
-                  <td><span class="type beginner">Beginner</span></td>
-                  <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
-                  <td><span class="progress not-completed"></span></td>
-              </tr>    
-              <tr>
+            <tr>
+                <td>SIG-001</td>
+                <td>Getting Started</td>
+                <td><span class="type beginner">Beginner</span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-001')"
+                           (click)="toggleBookmark('SIG-001')">
+                        </i>
+                    </span>
+                </td>
+                <td><span class="progress not-completed"></span></td>
+            </tr>
+            <tr>
+                <td>SIG-002</td>
+                <td>Hello</td>
+                <td><span class="type beginner">Beginner</span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-002')"
+                           (click)="toggleBookmark('SIG-002')">
+                        </i>
+                    </span>
+                </td>
+                <td><span class="progress not-completed"></span></td>
+            </tr>
+            <tr>
                 <td>SIG-003</td>
                 <td>Thank You</td>
                 <td><span class="type beginner">Beginner</span></td>
-                <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-003')"
+                           (click)="toggleBookmark('SIG-003')">
+                        </i>
+                    </span>
+                </td>
                 <td><span class="progress not-completed"></span></td>
-              </tr> 
-              <tr>
+            </tr>
+            <tr>
                 <td>SIG-004</td>
                 <td>Goodbye</td>
                 <td><span class="type beginner">Beginner</span></td>
-                <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-004')"
+                           (click)="toggleBookmark('SIG-004')">
+                        </i>
+                    </span>
+                </td>
                 <td><span class="progress not-completed"></span></td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <td>SIG-005</td>
                 <td>Sorry</td>
                 <td><span class="type intermediate">Intermediate</span></td>
-                <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-005')"
+                           (click)="toggleBookmark('SIG-005')">
+                        </i>
+                    </span>
+                </td>
                 <td><span class="progress not-completed"></span></td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <td>SIG-006</td>
                 <td>Okay</td>
                 <td><span class="type intermediate">Intermediate</span></td>
-                <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-006')"
+                           (click)="toggleBookmark('SIG-006')">
+                        </i>
+                    </span>
+                </td>
                 <td><span class="progress not-completed"></span></td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <td>SIG-007</td>
                 <td>A, B, C</td>
                 <td><span class="type intermediate">Intermediate</span></td>
-                <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-007')"
+                           (click)="toggleBookmark('SIG-007')">
+                        </i>
+                    </span>
+                </td>
                 <td><span class="progress not-completed"></span></td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <td>SIG-008</td>
                 <td>D, E, F</td>
                 <td><span class="type advanced">Advanced</span></td>
-                <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-008')"
+                           (click)="toggleBookmark('SIG-008')">
+                        </i>
+                    </span>
+                </td>
                 <td><span class="progress not-completed"></span></td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <td>SIG-009</td>
                 <td>G, H, I</td>
                 <td><span class="type advanced">Advanced</span></td>
-                <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-009')"
+                           (click)="toggleBookmark('SIG-009')">
+                        </i>
+                    </span>
+                </td>
                 <td><span class="progress not-completed"></span></td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <td>SIG-010</td>
                 <td>J, K, L</td>
                 <td><span class="type advanced">Advanced</span></td>
-                <td><span class="flag"><i class="fa-solid fa-bookmark"></i></span></td>
+                <td class="centered">
+                    <span class="flag">
+                        <i class="fa-solid fa-bookmark"
+                           [class.bookmarked]="isBookmarked('SIG-010')"
+                           (click)="toggleBookmark('SIG-010')">
+                        </i>
+                    </span>
+                </td>
                 <td><span class="progress not-completed"></span></td>
-              </tr>
-                      
-          </tbody>
+            </tr>
+        </tbody>
       </table>
   </div>
 </div>
