@@ -43,9 +43,12 @@ body {
   padding: 8px;
   color: #495057;
   text-decoration: none;
-  font-size: 16px;
   font-size: 20px; /* Updated font size */
   transition: background-color 0.3s;
+
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: .4s;
 }
 
 .menu-items li a:hover,
@@ -58,4 +61,12 @@ body {
 .menu-items li a i {
   margin-right: 16px;
   font-size: 20px;
+  min-width: 30px;  
+  text-align: center;
+}
+
+.menu-items li a span{
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity .3s;
 }
