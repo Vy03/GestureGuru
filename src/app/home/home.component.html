@@ -1,7 +1,7 @@
 <app-sidebar></app-sidebar>
 <div class="main-content">
   <header>
-    <h3 style="font-size: 24px; margin-left: 48px;">Home</h3>
+    <h3>Home</h3>
     <input type="text" class="search-bar" placeholder="Search">
   </header>
   <div class="content">
@@ -57,7 +57,7 @@
         </table>
       </div>
 
-      <div>
+      <div class="second-column">
         <div class="achievements" style="margin-bottom: 24px;">
           <h2>Recent Achievements</h2>
           <!-- <div class="achievement">
@@ -65,8 +65,7 @@
             <span>Perfection</span>
           </div> -->
           <!-- Add more achievements as needed -->
-        </div>
-  
+        </div>  
         <div class="performance">
           <h2>Your performance</h2>
           <!-- Add performance chart here -->
@@ -74,21 +73,23 @@
       </div>      
       <div class="mission">
         <h2 class="left-align">Daily Mission</h2>
-        <div class="progress-ring">
-          <!-- <svg>
-            <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"></circle>
-          </svg>
-          <span class="progress-text">1 out of 4</span> -->
-          <div class="circle">
-            <p>1</p><p style="font-weight: normal; font-size: 14px; margin: 8px;">out of</p><p> 4</p>
-          </div>
-        </div>
-        <ul class="mission-list">
-          <li><span class="status-dot green"></span> Log in today</li>
-          <li><span class="status-dot green"></span> Learn one lesson</li>
-          <li><span class="status-dot grey"></span> Learn two lessons</li>
-          <li><span class="status-dot grey"></span> Achieve 100% accuracy at least one time</li>
-        </ul>
+          <div class="mission-content"> <!-- New wrapper div -->
+            <div class="progress-ring">
+              <!-- <svg>
+                <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"></circle>
+              </svg>
+              <span class="progress-text">1 out of 4</span> -->
+              <div class="circle">
+                <p>1</p><p style="font-weight: normal; font-size: 14px; margin: 8px;">out of</p><p> 4</p>
+              </div>
+            </div>
+            <ul class="mission-list">
+              <li><span class="status-dot green"></span> Log in today</li>
+              <li><span class="status-dot green"></span> Learn one lesson</li>
+              <li><span class="status-dot grey"></span> Learn two lessons</li>
+              <li><span class="status-dot grey"></span> Achieve 100% accuracy at least one time</li>
+            </ul>
+          </div>     
       </div>
 
     </div>

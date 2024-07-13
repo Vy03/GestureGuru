@@ -20,6 +20,11 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+header h3 {
+  font-size: 24px;
+  margin-left: 48px;
+}
+
 header .search-bar {
   margin-left: 48px;
   width: 405px;
@@ -78,7 +83,7 @@ header .search-bar {
   width: 100%;
   display: grid;
   grid-template-columns: auto 45% 1fr; /* Three columns with custom widths */
-  grid-gap: 0px;
+  grid-gap: 20px;
   margin: 0 -12px; /* Adjusts for the item margin */
 }
 
@@ -129,6 +134,7 @@ header .search-bar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   grid-row: span 2; /* Span two rows in the grid */
+  text-align: left;
 }
 
 .lessons table {
@@ -197,6 +203,12 @@ header .search-bar {
   align-items: center;
 }
 
+.mission-content {
+  display: flex;
+  flex-direction: column; /* Column layout for desktop */
+  align-items: center; /* Center the progress ring */
+}
+
 .mission .left-align {
   align-self: flex-start;
   text-align: left;
@@ -207,6 +219,7 @@ header .search-bar {
   position: relative;
   width: 160px;
   height: 160px;
+  align-items: center; /* Center vertically */
   margin-bottom: 20px;
 }
 
@@ -258,4 +271,160 @@ header .search-bar {
 
 .mission-list .status-dot {
   margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 256px; /* Adjust for smaller sidebar */
+    width: calc(100% - 256px); /* Adjust width accordingly */
+  }
+
+  header h3 {
+    font-size: 20px; /* Smaller header size */
+    margin-left: 16px; /* Adjust margin */
+  }
+
+  header .search-bar {
+    width: 60%; /* Smaller width on smaller screens */
+    max-width: 100%; /* Full width */
+    margin-left: 16px; /* Adjust margin */
+  }
+
+  .content {
+    padding: 24px; /* Reduce padding for smaller screens */
+  }
+
+  .profile{
+    text-align: left;
+  }
+
+  .pfp {
+    margin-right: 48px; /* Remove right margin */
+    margin-bottom: 16px; /* Add bottom margin */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-gap: 12px; /* Adjust gap between items */
+  }
+
+  .lessons {
+    width: 100%; /* Full width for smaller screens */
+    order: 1;
+  }
+
+  .mission{
+    order: 2;
+  }
+
+  .second-column {
+    width: 100%;
+    order: 3;
+  }
+
+  .achievements, .performance, .mission {
+    width: 100%; /* Full width for smaller screens */
+    margin: 0;
+  }
+
+  .mission {
+    grid-row: auto; /* Adjust row span */
+  }
+
+  .mission-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the two columns */
+    flex-direction: row; /* Two columns for smaller screens */
+    align-items: flex-start; /* Align items to the top */
+  }
+
+  .progress-ring {
+    display: flex; /* Center the circle */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+
+  .mission-list {
+    flex: 1; /* Allow mission list to take available space */
+    padding-left: 16px; /* Space between the circle and the list */
+  }
+
+  .mission-list li {
+    display: flex; /* Align items in the list */
+    align-items: center; /* Center items vertically */
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 88px; /* Adjust for smaller sidebar */
+    width: calc(100% - 88px); /* Adjust width accordingly */
+  }
+
+  header h3 {
+    font-size: 18px; /* Smaller header size */
+    margin-left: 8px; /* Adjust margin */
+  }
+
+  header .search-bar {
+    width: 80%; /* Smaller width on smaller screens */
+    margin-left: 8px; /* Adjust margin */
+  }
+
+  .profile{
+    text-align: left;
+  }
+
+  .pfp {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+  }
+
+  .pfp img {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  .content {
+    padding: 16px; /* Reduce padding for smaller screens */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-gap: 12px; /* Adjust gap between items */
+  }
+
+  .lessons, .achievements, .performance, .mission {
+    width: 100%; /* Full width for smaller screens */
+    margin: 0;
+  }
+
+  .mission {
+    margin-top: 20px;    
+    order: 2; /* Move mission above other items */
+  }
+
+  .lessons {
+    order: 1; /* Move lessons below mission */
+  }
+
+  .second-column{
+    order: 3; /* Keep achievements and performance below lessons */
+  }
+}
+
+@media (max-width: 480px) {
+  .header .search-bar {
+    width: 100%; /* Full width for very small screens */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-gap: 12px;
+  }
 }

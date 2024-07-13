@@ -19,6 +19,11 @@ body {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  header h3 {
+    font-size: 24px;
+    margin-left: 48px;
+}
   
   header .search-bar {
     margin-left: 48px;
@@ -117,4 +122,45 @@ body {
 
 .progress.not-completed {
     background-color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 88px; /* Adjust for smaller sidebar */
+        width: calc(100% - 88px); /* Adjust width accordingly */
+    }
+
+    header h3 {
+        font-size: 20px; /* Smaller header size */
+        margin-left: 16px; /* Adjust margin */
+    }
+
+    header .search-bar {
+        width: 60%; /* Smaller width on smaller screens */
+        max-width: 100%; /* Full width */
+        margin-left: 16px; /* Adjust margin */
+    }
+
+    .lessons-table {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .lessons-table th, .lessons-table td {
+        padding: 8px; /* Smaller padding */
+    }
+
+    .lessons-table th, .lessons-table td {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .lessons-table th.centered,
+    .lessons-table td.centered {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .lessons-table th.task-column,
+    .lessons-table td.task-column {
+        display: none; /* Hide the task column on smaller screens */
+    }
 }

@@ -73,3 +73,34 @@ body {
     background-color: #333399;
   }
   
+
+  @media (max-width: 768px) {
+    .settings-container {
+        margin-left: 88px; /* Adjusted for smaller sidebar */
+        width: calc(100% - 88px); /* Adjust width accordingly */
+    }
+
+    .feedback-container {
+      margin-left: 20px; /* Adjusted for smaller sidebar */
+        width: calc(100% - 88px);
+        max-width: 100%; /* Full width for smaller screens */
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 20px; /* Smaller header size */
+    }
+
+    .form-group label {
+        font-size: 16px; /* Smaller label size */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px; /* Smaller input and textarea size */
+    }
+
+    .send-button {
+        width: 100%; /* Full width for buttons on smaller screens */
+    }
+}

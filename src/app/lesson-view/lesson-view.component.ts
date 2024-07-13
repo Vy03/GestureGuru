@@ -14,4 +14,8 @@ export class LessonViewComponent {
   navigateToWebcam(){
     this.router.navigate(['/webcam']);
   }
+
+  navigateToLand(){
+    this.router.navigate(['']);
+  }
 }

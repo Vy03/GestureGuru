@@ -102,3 +102,42 @@ header h1 {
 .footer-button .cancel-button:hover {
   background-color: #d6d8db;
 }
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .settings-container {
+      margin-left: 88px; /* Adjusted for smaller sidebar */
+      width: calc(100% - 88px); /* Adjust width accordingly */
+  }
+
+  .notif-container {
+    margin-left: 20px; /* Adjusted for smaller sidebar */
+      width: calc(100% - 88px); /* Adjust width accordingly */
+      max-width: 100%; /* Full width for smaller screens */
+      padding: 10px; /* Reduced padding for smaller screens */
+  }
+
+  header h1 {
+      font-size: 20px; /* Smaller header size */
+  }
+
+  .form-group h5 {
+      font-size: 18px; /* Smaller title size */
+  }
+
+  .form-group p {
+      font-size: 16px; /* Smaller description size */
+  }
+
+  .footer-button .save-button,
+  .footer-button .cancel-button {
+    margin-top: 20px;
+      width: 100%; /* Full width for buttons */
+  }
+
+  .footer-button {
+      flex-direction: column; /* Stack buttons vertically on small screens */
+      align-items: stretch; /* Stretch buttons to full width */
+  }
+}
