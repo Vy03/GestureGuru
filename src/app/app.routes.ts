@@ -15,6 +15,7 @@ import { WebcamComponent } from './webcam/webcam.component';
 import { NotificationComponent } from './notification/notification.component';
 import { SavedComponent } from './saved/saved.component';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { SetupComponent } from './setup/setup.component';
 
 export const routes: Routes = [
   //Setting up account / login
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about-us', component: AboutUsComponent }, 
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'setup', component: SetupComponent },
 
   //dashboard/home
   { path: 'home', component: HomeComponent },

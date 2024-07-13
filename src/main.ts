@@ -16,6 +16,7 @@ import { SavedComponent } from './app/saved/saved.component';
 import { AchievementsComponent } from './app/achievements/achievements.component';
 import { LessonViewComponent } from './app/lesson-view/lesson-view.component';
 import { WebcamComponent } from './app/webcam/webcam.component';
+import { SetupComponent } from './app/setup/setup.component';
 
 const routes: Routes = [
   //Setting up account / login
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'about-us', component: AboutUsComponent }, 
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'setup', component: SetupComponent },
 
   //dashboard/home
   { path: 'home', component: HomeComponent },

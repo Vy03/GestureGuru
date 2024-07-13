@@ -1,0 +1,40 @@
+<div class="setup-container">
+    <div class="setup-form">
+      
+      <div class="logo-container">
+        <div class="content">
+          <h2>Setup Your Profile</h2>
+          <p>Complete your profile details below</p>
+        </div>
+      </div>      
+  
+      <ul class="form-list">
+        <li class="form-group">
+          <label for="profilePicture">Profile Picture</label>
+          <div class="file-input-container">
+            <img *ngIf="profilePictureUrl" [src]="profilePictureUrl" class="profile-preview" alt="Profile Preview">
+            <input type="file" id="profilePicture" (change)="onFileSelected($event)" class="file-input" required>
+            <button type="button" class="file-button" (click)="triggerFileInput()">Upload a Picture</button>
+          </div>
+        </li>
+  
+        <li class="form-group">
+          <label for="bio">Bio</label>
+          <textarea id="bio" name="bio" class="form-control" placeholder="Tell us about yourself"></textarea>
+        </li>
+      </ul>
+
+      <div class="learning-level">
+        <p>What type of learner are you?</p>
+        <div class="button-group">
+          <button [ngClass]="{'active': learningLevel === 'beginner'}" (click)="selectLearningLevel('beginner')">Beginner</button>
+          <button [ngClass]="{'active': learningLevel === 'casual'}" (click)="selectLearningLevel('casual')">Casual</button>
+          <button [ngClass]="{'active': learningLevel === 'hardcore'}" (click)="selectLearningLevel('hardcore')">Hardcore</button>
+        </div>
+      </div>
+      
+      <button class="setup-button" (click)="onSubmit()" (click)="navigateToHome()">Save</button>
+    
+    </div>
+  </div>
+  
