@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,13 +9,17 @@ import { Router } from '@angular/router';
 })
 export class WebcamComponent implements AfterViewInit {
   @ViewChild('videoElement') videoElement!: ElementRef;
-  accuracyMessage: string = 'Accuracy: 0%';
 
   private mediaRecorder!: MediaRecorder;
   private recordedChunks: BlobPart[] = [];
   private countdown: number = 3;
-
-  constructor(private router: Router, private http: HttpClient) {}
+  public prediction: string = "0.00";
+  public accuracyMessage: string = "";
+  constructor(
+    private router: Router, 
+    private http: HttpClient,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngAfterViewInit(): void {
     this.setupWebcam();
@@ -40,13 +44,12 @@ export class WebcamComponent implements AfterViewInit {
 
   startRecording(): void {
     this.countdown = 3;
-    this.updateAccuracyMessage(`Recording in ${this.countdown}...`);
+    // this.updateAccuracyMessage(`Recording in ${this.countdown}...`);
     const countdownInterval = setInterval(() => {
       this.countdown--;
-      this.updateAccuracyMessage(`Recording in ${this.countdown}...`);
+      // this.updateAccuracyMessage(`Recording in ${this.countdown}...`);
       if (this.countdown === 0) {
         clearInterval(countdownInterval);
-        this.updateAccuracyMessage('Recording...');
         const video: HTMLVideoElement = this.videoElement.nativeElement;
         const stream = video.srcObject as MediaStream;
 
@@ -89,20 +92,34 @@ export class WebcamComponent implements AfterViewInit {
     const url = `http://127.0.0.1:5000/capture_video?words=A`;
     this.http.post(url, { video: base64Data }).subscribe(
       (response: any) => {
-        this.updateAccuracyMessage(`Accuracy: ${response.accuracy}%`);
-        // Navigate after HTTP request completes successfully
+        console.log('Server response:', response.Prediction);
+        this.prediction = response['Prediction']; 
+        console.log(this.prediction)
+        console.log(parseFloat(this.prediction))
+        this.updateAccuracyMessage()
         this.router.navigate(['/webcam']);
       },
       (error) => {
         console.error('Error sending video data to server:', error);
       }
     );
+  }  
+  
+  updateAccuracyMessage(): void {
+    if (parseFloat(this.prediction) < 25) {
+      this.accuracyMessage = 'Better luck next time';
+    } else if (parseFloat(this.prediction) < 50) {
+      this.accuracyMessage = 'You\'re almost there';
+    } else if (parseFloat(this.prediction) < 75) {
+      this.accuracyMessage = 'Wow, you did great';
+    } else if (parseFloat(this.prediction) < 90) {
+      this.accuracyMessage = 'Well done!';
+    } else {
+      this.accuracyMessage = 'Excellent!';
+    }
+    this.cdr.detectChanges(); // Trigger change detection
   }
   
-
-  updateAccuracyMessage(message: string): void {
-    this.accuracyMessage = message;
-  }
 
   navigateToView(): void {
     this.router.navigate(['/view']);
