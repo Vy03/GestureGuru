@@ -24,6 +24,10 @@ export class SideSetComponent {
     this.router.navigate(['/settings']);
   }
 
+  navigateToEmail() {
+    this.router.navigate(['/email']);
+  }
+
   navigateToNotif() {
     this.router.navigate(['/notif-set']);
   }
