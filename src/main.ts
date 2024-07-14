@@ -1,23 +1,24 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
+import { AboutUsComponent } from './app/about-us/about-us.component';
+import { AchievementsComponent } from './app/achievements/achievements.component';
 import { AppComponent } from './app/app.component';
-import { LandingComponent } from './app/landing/landing.component';
-import { LoginComponent } from './app/login/login.component';
-import { AboutUsComponent } from './app/about-us/about-us.component'; 
-import { SignUpComponent } from './app/sign-up/sign-up.component';
-import { HomeComponent } from './app/home/home.component';
-import { SettingsComponent } from './app/settings/settings.component';
-import { NotificationSettingsComponent } from './app/notification-settings/notification-settings.component';
+import { appConfig } from './app/app.config';
+import { EmailComponent } from './app/email/email.component';
 import { FeedbackComponent } from './app/feedback/feedback.component';
+import { HomeComponent } from './app/home/home.component';
+import { LandingComponent } from './app/landing/landing.component';
+import { LessonViewComponent } from './app/lesson-view/lesson-view.component';
 import { LessonsComponent } from './app/lessons/lessons.component';
-import { StatisticsComponent } from './app/statistics/statistics.component';
+import { LoginComponent } from './app/login/login.component';
+import { NotificationSettingsComponent } from './app/notification-settings/notification-settings.component';
 import { NotificationComponent } from './app/notification/notification.component';
 import { SavedComponent } from './app/saved/saved.component';
-import { AchievementsComponent } from './app/achievements/achievements.component';
-import { LessonViewComponent } from './app/lesson-view/lesson-view.component';
-import { WebcamComponent } from './app/webcam/webcam.component';
+import { SettingsComponent } from './app/settings/settings.component';
 import { SetupComponent } from './app/setup/setup.component';
-import { EmailComponent } from './app/email/email.component';
+import { SignUpComponent } from './app/sign-up/sign-up.component';
+import { StatisticsComponent } from './app/statistics/statistics.component';
+import { WebcamComponent } from './app/webcam/webcam.component';
 
 const routes: Routes = [
   //Setting up account / login
@@ -47,8 +48,4 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackComponent},
 ];
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes),
-  ],
-});
+bootstrapApplication(AppComponent, appConfig).catch((err)=>console.error(err));
