@@ -6,15 +6,14 @@
   </header>
   <div class="content">
     <div class="profile-cont">
-      <div class="pfp" >
+      <div class="pfp">
         <img src="assets/default_profile.jpeg" alt="Pfp" width="50" height="50">
       </div>
       <div class="profile">
         <h1>Welcome back, (User)!</h1>
         <p>Tons of lessons are waiting for you</p>
       </div>
-      
-    </div>    
+    </div>
 
     <div class="grid-container">
       <div class="lessons">
@@ -31,27 +30,27 @@
             <tr>
               <td>Getting Started</td>
               <td><span class="type beginner">Beginner</span></td>
-              <td class="centered"><span class="status-dot green"></span></td>
+              <td class="centered"><span class="status-dot green" data-status="Completed"></span></td>
             </tr>
             <tr>
               <td>Hello</td>
               <td><span class="type beginner">Beginner</span></td>
-              <td class="centered"><span class="status-dot yellow"></span></td>
+              <td class="centered"><span class="status-dot yellow" data-status="Passed"></span></td>
             </tr>
             <tr>
               <td>Sorry</td>
               <td><span class="type intermediate">Intermediate</span></td>
-              <td class="centered"><span class="status-dot red"></span></td>
+              <td class="centered"><span class="status-dot red" data-status="Retry"></span></td>
             </tr>
             <tr>
               <td>Goodbye</td>
               <td><span class="type intermediate">Intermediate</span></td>
-              <td class="centered"><span class="status-dot purple"></span></td>
+              <td class="centered"><span class="status-dot purple" data-status="Last seen"></span></td>
             </tr>
             <tr>
               <td>A, B, C</td>
               <td><span class="type advanced">Advanced</span></td>
-              <td class="centered"><span class="status-dot grey"></span></td>
+              <td class="centered"><span class="status-dot grey" data-status="Not started"></span></td>
             </tr>
           </tbody>
         </table>
@@ -60,38 +59,29 @@
       <div class="second-column">
         <div class="achievements" style="margin-bottom: 24px;">
           <h2>Recent Achievements</h2>
-          <!-- <div class="achievement">
-            <i class="fas fa-trophy"></i>
-            <span>Perfection</span>
-          </div> -->
-          <!-- Add more achievements as needed -->
-        </div>  
+        </div>
         <div class="performance">
           <h2>Your performance</h2>
-          <!-- Add performance chart here -->
         </div>
-      </div>      
+      </div>
       <div class="mission">
         <h2 class="left-align">Daily Mission</h2>
-          <div class="mission-content"> <!-- New wrapper div -->
-            <div class="progress-ring">
-              <!-- <svg>
-                <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"></circle>
-              </svg>
-              <span class="progress-text">1 out of 4</span> -->
-              <div class="circle">
-                <p>1</p><p style="font-weight: normal; font-size: 14px; margin: 8px;">out of</p><p> 4</p>
-              </div>
+        <div class="mission-content">
+          <div class="progress-ring">
+            <div class="circle">
+              <p>1</p>
+              <p style="font-weight: normal; font-size: 14px; margin: 8px;">out of</p>
+              <p> 4</p>
             </div>
-            <ul class="mission-list">
-              <li><span class="status-dot green"></span> Log in today</li>
-              <li><span class="status-dot green"></span> Learn one lesson</li>
-              <li><span class="status-dot grey"></span> Learn two lessons</li>
-              <li><span class="status-dot grey"></span> Achieve 100% accuracy at least one time</li>
-            </ul>
-          </div>     
+          </div>
+          <ul class="mission-list">
+            <li><span class="status-dot green" data-status="Completed"></span> Log in today</li>
+            <li><span class="status-dot green" data-status="Completed"></span> Learn one lesson</li>
+            <li><span class="status-dot grey" data-status="Not Completed"></span> Learn two lessons</li>
+            <li><span class="status-dot grey" data-status="Not Completed"></span> Achieve 100% accuracy at least one time</li>
+          </ul>
+        </div>
       </div>
-
     </div>
   </div>
 </div>
