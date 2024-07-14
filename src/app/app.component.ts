@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from "./footer/footer.component";
+import { Router, RouterModule } from '@angular/router';
 import { ContentLandpageComponent } from "./content-landpage/content-landpage.component";
+import { FooterComponent } from "./footer/footer.component";
+import { HeaderComponent } from './header/header.component';
 
 @Component({
     standalone: true,
