@@ -1,34 +1,33 @@
 <div class="main-container">
-    <div class="container-left">
-      <div class="header">
-        <button class="back-button" (click)="navigateToView()">Back</button>
-        <h2 style="margin-left: 60vh;">Getting Started</h2>
-      </div>
-      <div class="webcam-container">
-        <video #videoElement autoplay playsinline></video>
-      </div>  
+  <div class="container-left">
+    <div class="header">
+      <button class="back-button" (click)="navigateToView()">Back</button>
+      <h2 style="margin-left: 60vh;">Getting Started</h2>
     </div>
-    <div class="container-right">
-      <div class="right-panel">
-        <div class="trouble-section">
-          <p>Having trouble?</p>
-          <p>Save this lesson to try it again later</p>
-        </div>
-        <div class="video-placeholder">
-            <video class="video-player" controls>
-                <source src="path/to/your/video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-        </div>
-        <div class="controls">
-          <div class="accuracy">Accuracy: 0%</div>
-          <p>It's quite low... Try practicing a bit more</p>
-        </div>
-        <div class="foot">
-          SIG-001
-          <button class="retry-button">Retry</button>
-        </div>
+    <div class="webcam-container">
+      <video #videoElement autoplay playsinline></video>
+    </div>
+  </div>
+  <div class="container-right">
+    <div class="right-panel">
+      <div class="trouble-section">
+        <p>Having trouble?</p>
+        <p>Save this lesson to try it again later</p>
+      </div>
+      <div class="video-placeholder">
+        <video class="video-player" controls>
+          <source src="path/to/your/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="controls">
+        <div class="accuracy">{{accuracyMessage}}</div>
+        <p>It's quite low... Try practicing a bit more</p>
+      </div>
+      <div class="foot">
+        SIG-001
+        <button class="retry-button" (click)="startRecording()">Retry</button>
       </div>
     </div>
   </div>
-   
+</div>
