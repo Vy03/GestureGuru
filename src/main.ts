@@ -17,6 +17,7 @@ import { AchievementsComponent } from './app/achievements/achievements.component
 import { LessonViewComponent } from './app/lesson-view/lesson-view.component';
 import { WebcamComponent } from './app/webcam/webcam.component';
 import { SetupComponent } from './app/setup/setup.component';
+import { EmailComponent } from './app/email/email.component';
 
 const routes: Routes = [
   //Setting up account / login
@@ -41,6 +42,7 @@ const routes: Routes = [
 
   //Settings
   { path: 'settings', component: SettingsComponent }, //setting profile98
+  { path: 'email', component: EmailComponent},
   { path: 'notif-set', component: NotificationSettingsComponent },
   { path: 'feedback', component: FeedbackComponent},
 ];

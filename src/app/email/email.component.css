@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+  }
+  
+  .email-container {
+    margin-top: 40px;
+    margin-left: 256px; /* Adjust based on your sidebar width */
+    width: calc(100% - 256px);
+    padding: 20px;
+  }
+  
+  header {
+    padding: 0px;
+    background-color: #fff;
+    margin-bottom: 21px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  }
+  
+  header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .profile-container {
+    
+    margin-left: 170px;
+    width: 620px;
+    background-color: #fff;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; */
+  }
+  
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .contain-otp{
+    display: flex; 
+    flex-direction: row;
+  }
+
+  .otp{
+    width: 70%; 
+    margin-right: 20px;
+  }
+  
+  .save-button {
+    width: 30%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4442B4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .save-button:hover {
+    background-color: #333399;
+  }
+
+  @media (max-width: 768px) {
+    .email-container {
+        margin-left: 88px; /* Adjusted for smaller sidebar */
+        width: calc(100% - 88px); /* Adjust width accordingly */
+    }
+
+    .profile-container {
+      margin-left: 20px;
+      width: calc(100% - 88px);
+      max-width: 100%; /* Full width for smaller screens */
+      padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 20px; /* Smaller header size */
+    }
+
+
+    .form-group label,
+    .form-group input{
+        font-size: 14px; /* Smaller input size */
+    }
+
+    .otp{
+        width: 80%; 
+    }
+
+    .save-button {
+        width: 100%; /* Full width for the button */
+    }
+}
+  
