@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class SetupComponent {
   }
 
   profilePicture: File | null = null;
-  profilePictureUrl: string | null = null; 
+  profilePictureUrl: string = 'assets/default_profile.jpeg';
   bio: string = '';
   learningLevel: string | null = null;
 
