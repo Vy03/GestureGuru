@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 
@@ -9,4 +10,11 @@ import { FooterComponent } from '../footer/footer.component';
   standalone: true,
   imports: [HeaderComponent, FooterComponent],
 })
-export class AboutUsComponent {}
+export class AboutUsComponent {
+  constructor(private router: Router) {}
+
+  navigateToSignup() {
+    this.router.navigate(['/sign-up']);
+  }
+
+}

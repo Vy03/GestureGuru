@@ -17,9 +17,14 @@ export class SignUpComponent {
     this.router.navigate(['/home']);
   }
 
+  navigateToSetup() {
+    this.router.navigate(['/setup']);
+  }
+
   navigateToLogin() {
     this.router.navigate(['/login']);
   }
+
   navigateToLand() {
     this.router.navigate(['']);
   }

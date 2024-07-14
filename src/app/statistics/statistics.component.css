@@ -20,6 +20,11 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+header h3 {
+  font-size: 24px;
+  margin-left: 48px;
+}
+
 header .search-bar {
   margin-left: 48px;
   width: 405px;
@@ -50,14 +55,14 @@ header .search-bar {
 }
 
 .daily {
-  width: 70%;
+  width: 60%;
   height: 40vh;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
 .avg {
-  width: 30%;
+  width: 40%;
   height: 40vh;
   margin-right: 0; /* Remove margin from the last box */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -81,4 +86,72 @@ header .search-bar {
 .box.stats h3 {
   font-weight: bold;
   font-size: 24px;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 256px; /* Adjust for smaller sidebar */
+    width: calc(100% - 256px); /* Adjust width accordingly */
+  }
+
+  header h3 {
+    font-size: 20px; /* Smaller header size */
+    margin-left: 16px; /* Adjust margin */
+  }
+
+  header .search-bar {
+    width: 60%; /* Smaller width on smaller screens */
+    max-width: 100%; /* Full width */
+    margin-left: 16px; /* Adjust margin */
+  }
+
+  .content {
+    padding: 24px; /* Reduce padding for smaller screens */
+  }
+
+  .box-container {
+    flex-direction: column; /* Stack elements vertically */
+    height: 100vh; /* Full height for the container */
+  }
+  
+
+  .daily, .avg{
+    width: 100%; /* Full width for smaller screens */
+    height: 100%; /* Full height for smaller screens */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+  }
+
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 88px; /* Adjust for smaller sidebar */
+    width: calc(100% - 88px); /* Adjust width accordingly */
+  }
+
+  header h3 {
+    font-size: 18px; /* Smaller header size */
+    margin-left: 8px; /* Adjust margin */
+  }
+
+  header .search-bar {
+    width: 80%; /* Smaller width on smaller screens */
+    margin-left: 8px; /* Adjust margin */
+  }
+
+  .content {
+    padding: 16px; /* Reduce padding for smaller screens */
+  }
+
+  .box-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .daily, .avg{
+    width: 100%; /* Full width for smaller screens */
+    height: 100%; /* Adjust height accordingly */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+  }
 }

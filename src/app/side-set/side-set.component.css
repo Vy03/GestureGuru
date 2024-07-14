@@ -17,6 +17,10 @@ body {
   align-items: center;
 }
 
+.settings-text{
+  font-size: 20px; color: #31363F; margin-left: 24px; font-weight: bold;
+}
+
 .sidebar-logo img {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -104,4 +108,32 @@ body {
 
 .sidebar-bottom {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 88px;
+    overflow: hidden;
+  }
+
+  .settings-text{
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  .sidebar-logo img {
+    opacity: 0;
+    margin-top: 24px; 
+    margin-bottom: 24px;
+  }
+
+  .menu-items li a span {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+  }
+
+  .sidebar.collapsed {
+    width: 256px;
+  }
 }

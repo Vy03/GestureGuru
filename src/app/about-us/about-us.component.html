@@ -1,12 +1,47 @@
 <app-header></app-header>
 
 <section class="about-us-content">
-  <h2>About Us</h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis
-    libero in dui accumsan, id lobortis tortor viverra. Nulla facilisi.
-    Praesent auctor eget odio eget pretium.
-  </p>
+    <h1>About Us</h1>
+  <div class="section-header">
+    <h2>Our Team</h2>
+  </div>
+  <div class="section-content">
+    <p>
+      Meet the passionate individuals behind our sign language teaching platform.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis
+      libero in dui accumsan, id lobortis tortor viverra.
+    </p>
+  </div>
+
+  <div class="section-header">
+    <h2>Our Mission</h2>
+  </div>
+  <div class="section-content">
+    <p>
+      Our mission is to make sign language accessible to everyone, fostering
+      inclusivity and communication across communities.
+    </p>
+  </div>
+
+  <div class="section-header">
+    <h2>Our Story</h2>
+  </div>
+  <div class="section-content">
+    <p>
+      Founded in [Year], our journey began with a vision to empower individuals
+      through sign language education. Since then, we have grown to become a
+      leading platform in the field, serving thousands of learners worldwide.
+    </p>
+  </div>
 </section>
+
+<div style="margin-top: 60px; margin-bottom: 100px; height: 424px; display: flex; justify-content: center; align-items: center;">
+  <main style="padding-top: 120px; padding-bottom: 120px; background-color: #f7f7f7; text-align: center; width: 110%;">
+    <h2 style="font-size: 40px;">Learn Sign Language with GestureGuru!</h2>
+    <p>Click the button below to start your journey!</p>
+    <button class="sign-up" (click)="navigateToSignup()">Get Started</button>
+  </main> 
+</div>
+
 
 <app-footer></app-footer>

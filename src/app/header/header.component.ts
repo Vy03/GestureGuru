@@ -12,6 +12,10 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   constructor(private router: Router) {}
 
+  navigateToHome() {
+    this.router.navigate(['']);
+  }
+
   navigateToLogin() {
     this.router.navigate(['/login']);
   }

@@ -94,4 +94,36 @@ body {
   .save-button:hover {
     background-color: #333399;
   }
+
+  @media (max-width: 768px) {
+    .settings-container {
+        margin-left: 88px; /* Adjusted for smaller sidebar */
+        width: calc(100% - 88px); /* Adjust width accordingly */
+    }
+
+    .profile-container {
+      margin-left: 20px;
+      width: calc(100% - 88px);
+      max-width: 100%; /* Full width for smaller screens */
+      padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 20px; /* Smaller header size */
+    }
+
+    .profile-header h2 {
+        font-size: 18px; /* Smaller name size */
+    }
+
+    .form-group label,
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px; /* Smaller input size */
+    }
+
+    .save-button {
+        width: 100%; /* Full width for the button */
+    }
+}
   

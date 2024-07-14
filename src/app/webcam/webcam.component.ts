@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-webcam',
@@ -8,6 +9,8 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
   styleUrl: './webcam.component.css'
 })
 export class WebcamComponent {
+
+  constructor(private router: Router) {}
   @ViewChild('videoElement')
   videoElement!: ElementRef;
 
@@ -30,6 +33,10 @@ export class WebcamComponent {
     } else {
       console.error('Browser tidak mendukung getUserMedia.');
     }
+  }
+
+  navigateToView(){
+    this.router.navigate(['/view']);
   }
 
 }

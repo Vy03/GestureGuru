@@ -19,6 +19,10 @@ body {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  header h3{
+    font-size: 24px; margin-left: 48px;
+  }
   
   header .search-bar {
     margin-left: 48px;
@@ -69,4 +73,31 @@ body {
     font-size: 16px;
     margin: 5px 0;
   }
+
+  @media (max-width: 768px) {
+    .main-content {
+        margin-left: 88px; /* Adjust for smaller sidebar */
+        width: calc(100% - 88px); /* Adjust width accordingly */
+        transition: .3s;
+    }
+
+    header h3 {
+      font-size: 20px; /* Smaller header size */
+      margin-left: 16px; /* Adjust margin */
+  }
+
+  header .search-bar {
+      width: 60%; /* Smaller width on smaller screens */
+      max-width: 100%; /* Full width */
+      margin-left: 16px; /* Adjust margin */
+  }
+
+    .achievement-card h3 {
+        font-size: 20px; /* Smaller font size */
+    }
+
+    .achievement-card p {
+        font-size: 14px; /* Smaller font size */
+    }
+}
   
