@@ -33,12 +33,20 @@ export class SettingsComponent {
 
 
     ngOnInit(): void {
+        this.checkSession()
         this.settingsForm = this.fb.group({
             username: [''],
             bio: [''],
         });
 
         this.getUser()
+    }
+
+    checkSession() {
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        if (!isLoggedIn || isLoggedIn !== 'yes') {
+            this.router.navigate(['/login']);
+        }
     }
 
     getUser() {
