@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto'; // Import Chart.js (use 'chart.js/auto' for Chart.js version 3)
 import { SidebarComponent } from "../sidebar/sidebar.component";
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-statistics',
@@ -11,11 +12,22 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
 })
 export class StatisticsComponent implements OnInit {
 
-    constructor() { }
+  constructor(
+    private router: Router,
+  ) {}
+
     ngOnInit(): void {
+      this.checkSession()
         this.initDailyActivityChart();
         this.initStatisticsChart();
       }
+
+      checkSession() {
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        if (!isLoggedIn || isLoggedIn !== 'yes') {
+            this.router.navigate(['/login']);
+        }
+    }
       
       initDailyActivityChart() {
         const ctx = document.getElementById('dailyActivityChart') as HTMLCanvasElement;

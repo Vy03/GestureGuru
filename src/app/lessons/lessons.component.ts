@@ -22,7 +22,16 @@ export class LessonsComponent implements OnInit {
     private lessonService: LessonService // Corrected service name
   ) {}
 
+
+checkSession() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (!isLoggedIn || isLoggedIn !== 'yes') {
+        this.router.navigate(['/login']);
+    }
+}
+
   ngOnInit(): void {
+    this.checkSession(),
     this.loadData();
   }
 

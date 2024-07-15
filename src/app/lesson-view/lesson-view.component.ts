@@ -24,6 +24,7 @@ export class LessonViewComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.checkSession();
     if (this.userId) {
       this.lessonService.browseLessons(this.userId).subscribe(
         (lessons: any) => {
@@ -37,6 +38,13 @@ export class LessonViewComponent implements OnInit{
       );
     }
   }
+
+  checkSession() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (!isLoggedIn || isLoggedIn !== 'yes') {
+        this.router.navigate(['/login']);
+    }
+}
 
   navigateToLand(){
     this.router.navigate(['']);

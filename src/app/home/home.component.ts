@@ -38,7 +38,16 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.checkSession();
+  }
+
+  checkSession() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (!isLoggedIn || isLoggedIn !== 'yes') {
+        this.router.navigate(['/login']);
+    }
+}
 
   getUserProfilePictureUrl(): string {
     console.log(this.profile)

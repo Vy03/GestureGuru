@@ -21,6 +21,18 @@ export class WebcamComponent implements AfterViewInit {
     private cdr: ChangeDetectorRef
   ) {}
 
+  ngOnInit(): void {
+      this.checkSession()
+
+  }
+
+  checkSession() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (!isLoggedIn || isLoggedIn !== 'yes') {
+          this.router.navigate(['/login']);
+      }
+  }
+
   ngAfterViewInit(): void {
     this.setupWebcam();
     this.startRecording();

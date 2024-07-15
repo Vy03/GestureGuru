@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
 import { SidebarComponent } from "../sidebar/sidebar.component";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
     selector: 'app-saved',
@@ -9,6 +11,23 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
     imports: [SidebarComponent]
 })
 export class SavedComponent {
+    constructor(
+        private router: Router,
+      ) {}
+
+
+      ngOnInit(): void {
+        this.checkSession()
+  
+    }
+  
+    checkSession() {
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        if (!isLoggedIn || isLoggedIn !== 'yes') {
+            this.router.navigate(['/login']);
+        }
+    }
+    
     bookmarkedLessons: string[] = [];
 
     toggleBookmark(lessonCode: string) {
