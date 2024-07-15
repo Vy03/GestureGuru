@@ -15,7 +15,6 @@ import { NgIf } from '@angular/common';
     imports: [
         SideSetComponent,
         ReactiveFormsModule,
-        NgIf
     ]
 })
 export class SettingsComponent {
@@ -28,8 +27,7 @@ export class SettingsComponent {
         private settingsService: SettingsService,
     ) {}
       
-    // userId: string | null = sessionStorage.getItem('userId');
-    public userId: number = 1;
+    userId: string | null = sessionStorage.getItem('userId');
 
 
     ngOnInit(): void {
@@ -38,8 +36,6 @@ export class SettingsComponent {
             username: [''],
             bio: [''],
         });
-
-        this.getUser()
     }
 
     checkSession() {

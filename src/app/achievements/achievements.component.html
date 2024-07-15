@@ -8,9 +8,9 @@
         <div class="achievements-grid">
           <div class="achievement-card" *ngFor="let achievement of achievements">
             <i class="fa fa-trophy"></i>
-            <h3>Perfection</h3>
-            <p>1/10</p>
-            <p>Achieve 100% accuracy 10 times</p>
+            <h3>{{ achievement.title }}</h3>
+            <p>{{ achievement.progress }}</p>
+            <p>{{ achievement.description }}</p>
           </div>
         </div>
       </div>

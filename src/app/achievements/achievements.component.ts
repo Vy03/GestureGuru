@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { SidebarComponent } from "../sidebar/sidebar.component";
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-achievements',
@@ -11,25 +10,41 @@ import { Router } from '@angular/router';
     imports: [SidebarComponent, CommonModule]
 })
 export class AchievementsComponent {
-    achievements = Array(12).fill({
-        title: 'Perfection',
-        progress: '1/10',
-        description: 'Achieve 100% accuracy 10 times'
-      });
-
-      constructor(
-        private router: Router,
-      ) {}
-    
-    
-      ngOnInit(): void {
-          this.checkSession()
-      }
-    
-      checkSession() {
-          const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-          if (!isLoggedIn || isLoggedIn !== 'yes') {
-              this.router.navigate(['/login']);
-          }
-      }
+    achievements = [
+        {
+          title: 'Novice',
+          progress: '',
+          description: 'Attempted 3 lessons'
+        },
+        {
+          title: 'Rookie',
+          progress: '',
+          description: 'Attempted 5 lessons'
+        },
+        {
+          title: 'Junior',
+          progress: '',
+          description: 'Attempted 7 lessons'
+        },
+        {
+          title: 'Seasoned',
+          progress: '',
+          description: 'Attempted 9 lessons'
+        },
+        {
+          title: 'Skilled',
+          progress: '',
+          description: 'Attempted 11 lessons'
+        },
+        {
+          title: 'Legendary',
+          progress: '',
+          description: 'Attempted 13 lessons'
+        },
+        {
+          title: 'Conqueror',
+          progress: '',
+          description: 'Attempted 15 lessons'
+        },
+    ]
 }
