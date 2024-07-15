@@ -25,7 +25,7 @@ export class DataService {
   ) {}
 
   fetchData() {
-    return this.http.get(`${this.config.baseUrl}/data`);
+    return this.http.get(`${this.config.baseUrl}data`);
   }
 }
 

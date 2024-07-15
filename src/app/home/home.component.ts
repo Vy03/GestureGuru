@@ -10,9 +10,9 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  userId = sessionStorage.getItem('id');
+  userId = sessionStorage.getItem('userId');
   userName = sessionStorage.getItem('username');
-  profile: string | null = sessionStorage.getItem('imagepath');
+  profile: string | null = sessionStorage.getItem('userImage');
 
   lessons = [
     { title: 'Row 1', difficulty: 123, status: 'green' },
@@ -41,8 +41,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
   getUserProfilePictureUrl(): string {
-    const path = this.profile ? this.profile : 'assets/default_profile.jpeg'
-    return path;
+    console.log(this.profile)
+    if (this.profile == null){
+      return 'assets/default_profile.jpeg'
+    }
+    return this.profile;
   }
 
   navigateToLogin() {
