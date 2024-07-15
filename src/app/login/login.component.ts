@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { SessionStorageService } from 'ngx-webstorage';
 import { LoginService } from './login.service';
 
 @Component({
@@ -25,7 +24,6 @@ export class LoginComponent {
     private fb: FormBuilder,
     private toastr: ToastrService,
     private loginService: LoginService,
-    private sessionStorage: SessionStorageService
   ) {}
 
   navigateToHome() {
@@ -55,6 +53,7 @@ export class LoginComponent {
           this.toastr.success(response.message, 'Success');
           sessionStorage.setItem('username', response.user.username);
           sessionStorage.setItem('userId', response.user.id);
+          sessionStorage.setItem('userImage', response.user.profile);
           this.router.navigate(['/home']);
         },
         (error) => {

@@ -85,8 +85,9 @@ export class SignUpComponent implements OnInit {
           console.log('Data successfully sent:', response);
           this.toastr.success(response.message, 'Verification Success');
           this.isRegistered = true;
-          sessionStorage.setItem('id', response.user.id);
+          sessionStorage.setItem('userId', response.user.id);
           sessionStorage.setItem('username', response.user.username);
+          sessionStorage.setItem('userImage', response.user.profile)
           this.router.navigate(['/home']);
         },
         (error) => {
