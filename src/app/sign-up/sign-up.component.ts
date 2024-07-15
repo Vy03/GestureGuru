@@ -82,14 +82,13 @@ export class SignUpComponent implements OnInit {
       
       this.signUpService.verifyUser(this.userId, otpData).subscribe(
         (response: any) => {
-          console.log('Data successfully sent:', response);
           this.toastr.success(response.message, 'Verification Success');
           this.isRegistered = true;
           sessionStorage.setItem('userId', response.user.id);
           sessionStorage.setItem('username', response.user.username);
           sessionStorage.setItem('userImage', response.user.profile)
           this.router.navigate(['/home']);
-        },
+        },  
         (error) => {
           if (error.error && error.error.message) {
             this.toastr.error("User Not Registered", 'Error');

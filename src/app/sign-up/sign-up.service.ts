@@ -25,6 +25,6 @@ export class SignUpService {
   }
 
   verifyUser(id: number, otp: any): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}user/verify/${id}`, otp);
+    return this.http.put<any>(`${this.baseUrl}user/verify/${id}?new=true`, otp);
   }  
 }
