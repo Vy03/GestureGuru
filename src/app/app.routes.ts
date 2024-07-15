@@ -17,6 +17,7 @@ import { SavedComponent } from './saved/saved.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { SetupComponent } from './setup/setup.component';
 import { EmailComponent } from './email/email.component';
+import { VerifyComponent } from './verify/verify.component';
 
 export const routes: Routes = [
   //Setting up account / login
@@ -42,6 +43,7 @@ export const routes: Routes = [
   //Settings
   { path: 'settings', component: SettingsComponent }, //setting profile98
   { path: 'email', component: EmailComponent},
+  { path: 'verify', component: VerifyComponent},
   { path: 'notif-set', component: NotificationSettingsComponent },
   { path: 'feedback', component: FeedbackComponent},
 ];

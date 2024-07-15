@@ -19,6 +19,7 @@ import { SetupComponent } from './app/setup/setup.component';
 import { SignUpComponent } from './app/sign-up/sign-up.component';
 import { StatisticsComponent } from './app/statistics/statistics.component';
 import { WebcamComponent } from './app/webcam/webcam.component';
+import { VerifyComponent } from './app/verify/verify.component';
 
 const routes: Routes = [
   //Setting up account / login
@@ -44,6 +45,7 @@ const routes: Routes = [
   //Settings
   { path: 'settings', component: SettingsComponent }, //setting profile98
   { path: 'email', component: EmailComponent},
+  { path: 'verify', component: VerifyComponent},
   { path: 'notif-set', component: NotificationSettingsComponent },
   { path: 'feedback', component: FeedbackComponent},
 ];

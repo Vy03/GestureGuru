@@ -1,0 +1,66 @@
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .contain-otp{
+    display: flex; 
+    flex-direction: row;
+  }
+
+  .otp{
+    width: 70%; 
+    margin-right: 20px;
+  }
+  
+  .save-button {
+    width: 30%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4442B4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .save-button:hover {
+    background-color: #333399;
+  }
+  
+  
+  .login-container {
+    margin-top: 120px;
+    width: 100%; /* Full width of viewport */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+  }
+    
+    .login-form {
+    width: 400px;
+    padding: 12px;
+    align-items: center;
+    }
+    
+    
