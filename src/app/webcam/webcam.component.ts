@@ -39,6 +39,14 @@ export class WebcamComponent implements AfterViewInit, OnInit {
     this.lessonName = this.route.snapshot.params['name'];
     this.lessonId = this.route.snapshot.params['id'];
     this.videoPath = `assets/lessons/${this.lessonName}.mp4`;
+    this.checkSession()
+  }
+
+  checkSession() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (!isLoggedIn || isLoggedIn !== 'yes') {
+          this.router.navigate(['/login']);
+      }
   }
 
   ngAfterViewInit(): void {

@@ -35,6 +35,7 @@ export class LessonViewComponent implements OnInit {
 
   loadData(): void {
     console.log(this.userId);
+    this.checkSession();
     if (this.userId) {
       this.lessonService.browseLessons({"userId": parseInt(this.userId)}).subscribe(
         (response) => {
@@ -65,4 +66,14 @@ export class LessonViewComponent implements OnInit {
   navigateToLessons() {
     this.router.navigate(['/lessons']);
   }
+  checkSession() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (!isLoggedIn || isLoggedIn !== 'yes') {
+        this.router.navigate(['/login']);
+    }
+  }
+
+  navigateToLand(){
+    this.router.navigate(['']);
+  } 
 }

@@ -54,6 +54,8 @@ export class LoginComponent {
           sessionStorage.setItem('username', response.user.username);
           sessionStorage.setItem('userId', response.user.id);
           sessionStorage.setItem('userImage', response.user.profile);
+          sessionStorage.setItem('isLoggedIn', "yes");
+          sessionStorage.setItem('verified', response.user.verified);
           this.router.navigate(['/home']);
         },
         (error) => {

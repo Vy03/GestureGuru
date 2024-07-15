@@ -31,4 +31,8 @@ export class ContentLandpageComponent {
   navigateToWebcam(){
     this.router.navigate(['/webcam']);
   }
+
+  navigateToVerify(){
+    this.router.navigate(['/verify']);
+  }
 }

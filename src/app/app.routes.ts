@@ -16,6 +16,7 @@ import { LessonViewComponent } from './lesson-view/lesson-view.component';
 import { NotificationComponent } from './notification/notification.component';
 import { SavedComponent } from './saved/saved.component';
 import { SetupComponent } from './setup/setup.component';
+import { VerifyComponent } from './verify/verify.component';
 import { WebcamComponent } from './webcam/webcam.component';
 
 export const routes: Routes = [
@@ -38,9 +39,11 @@ export const routes: Routes = [
   { path: 'view/:name', component: LessonViewComponent },
   { path: 'webcam/:name/:id', component: WebcamComponent },
 
-  // Settings
-  { path: 'settings', component: SettingsComponent },
-  { path: 'email', component: EmailComponent },
+
+  //Settings
+  { path: 'settings', component: SettingsComponent }, //setting profile98
+  { path: 'email', component: EmailComponent},
+  { path: 'verify', component: VerifyComponent},
   { path: 'notif-set', component: NotificationSettingsComponent },
   { path: 'feedback', component: FeedbackComponent },
 ];

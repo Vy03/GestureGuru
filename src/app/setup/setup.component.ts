@@ -11,7 +11,21 @@ import { Router } from '@angular/router';
 })
 export class SetupComponent {
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+  ) {}
+
+
+  ngOnInit(): void {
+      this.checkSession()
+  }
+
+  checkSession() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (!isLoggedIn || isLoggedIn !== 'yes') {
+          this.router.navigate(['/login']);
+      }
+  }
 
   navigateToHome() {
     this.router.navigate(['/home']);
