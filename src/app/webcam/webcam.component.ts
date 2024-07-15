@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WebcamService } from './webcam.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { WebcamService } from './webcam.service';
   templateUrl: './webcam.component.html',
   styleUrls: ['./webcam.component.css']
 })
-export class WebcamComponent implements AfterViewInit {
+export class WebcamComponent implements AfterViewInit, OnInit {
   @ViewChild('videoElement') videoElement!: ElementRef;
 
   private mediaRecorder!: MediaRecorder;
@@ -20,12 +20,24 @@ export class WebcamComponent implements AfterViewInit {
   public userId: string | null = sessionStorage.getItem('userId');
   public userName: string | null = sessionStorage.getItem('username');
   public profile: string | null = sessionStorage.getItem('userImage');
+
+  public lessonName: string = "";
+  public lessonId: number = 0;
+  public videoPath: string = ""
+
   constructor(
     private router: Router, 
     private http: HttpClient,
     private cdr: ChangeDetectorRef,
     private webcamService: WebcamService,
+    private route: ActivatedRoute, 
   ) {}
+
+  ngOnInit(): void {
+    this.lessonName = this.route.snapshot.params['name'];
+    this.lessonId = this.route.snapshot.params['id'];
+    this.videoPath = `assets/lessons/${this.lessonName}.mp4`;
+  }
 
   ngAfterViewInit(): void {
     this.setupWebcam();
@@ -95,7 +107,7 @@ export class WebcamComponent implements AfterViewInit {
   }
 
   sendToServer(base64Data: string): void {
-    const url = `http://127.0.0.1:5000/capture_video?words=A`;
+    const url = `http://127.0.0.1:5000/capture_video?words=${this.lessonName}`;
     this.http.post(url, { video: base64Data }).subscribe(
       (response: any) => {
         console.log('Server response:', response.Prediction);
@@ -103,7 +115,7 @@ export class WebcamComponent implements AfterViewInit {
         console.log(this.prediction)
         console.log(parseFloat(this.prediction))
         this.updateAccuracyMessage()
-        this.webcamService.attemptLesson(this.userId, 1, {score: parseFloat(this.prediction)})
+        this.webcamService.attemptLesson(this.userId, this.lessonId, {score: parseFloat(this.prediction)})
         this.router.navigate(['/webcam']);
       },
       (error) => {

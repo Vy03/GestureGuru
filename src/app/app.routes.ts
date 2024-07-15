@@ -36,7 +36,7 @@ export const routes: Routes = [
 
   // Video
   { path: 'view/:name', component: LessonViewComponent },
-  { path: 'webcam', component: WebcamComponent },
+  { path: 'webcam/:name/:id', component: WebcamComponent },
 
   // Settings
   { path: 'settings', component: SettingsComponent },

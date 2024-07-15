@@ -15,6 +15,7 @@ export class LessonViewComponent implements OnInit {
   userName = sessionStorage.getItem('username');
   profile: string | null = sessionStorage.getItem('userImage');
   lessonName: string = "";
+  lessonId: number = 0;
 
   lessonList: any[] = []
   filteredLessons: any[] = []
@@ -43,6 +44,7 @@ export class LessonViewComponent implements OnInit {
           const foundLesson = this.lessonList.find(lesson => lesson.title === this.lessonName);
           if (foundLesson) {
             console.log('Found lesson:', foundLesson);
+            this.lessonId = foundLesson.id;
             this.filteredLessons = this.lessonList.filter(lesson => lesson.type === foundLesson.type);
             console.log('Filtered lessons by type:', this.filteredLessons);
           } else {
@@ -57,7 +59,7 @@ export class LessonViewComponent implements OnInit {
   }
 
   navigateToWebcam() {
-    this.router.navigate(['/webcam']);
+    this.router.navigate(['/webcam', this.lessonName, this.lessonId]);
   }
 
   navigateToLessons() {
