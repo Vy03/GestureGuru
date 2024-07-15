@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { SessionStorageService } from 'ngx-webstorage';
 import { LoginService } from './login.service';
-
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,8 @@ export class LoginComponent {
     private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private sessionStorage: SessionStorageService
   ) {}
 
   navigateToHome() {
@@ -50,9 +51,11 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.loginService.loginUser(this.loginForm.value).subscribe(
         (response: any) => {
-          //benarkah ini aku tak tau
           console.log('Data berhasil dikirim:', response);
           this.toastr.success(response.message, 'Success');
+          sessionStorage.setItem('username', response.user.username);
+          sessionStorage.setItem('userId', response.user.id);
+          this.router.navigate(['/home']);
         },
         (error) => {
           console.error('Gagal login:', error);

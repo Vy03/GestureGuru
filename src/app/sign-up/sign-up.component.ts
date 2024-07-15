@@ -25,7 +25,7 @@ export class SignUpComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private signUpService: SignUpService
+    private signUpService: SignUpService,
   ) {}
 
   navigateToHome() {
@@ -77,16 +77,16 @@ export class SignUpComponent implements OnInit {
   }
 
   onOtpSubmit() {
-    console.log('tes')
-    console.log(this.otpForm)
     if (this.otpForm.valid){
       const otpData = { otp: this.otpForm.get('otp')?.value };
       
       this.signUpService.verifyUser(this.userId, otpData).subscribe(
         (response: any) => {
-          console.log('Data berhasil dikirim:', response);
+          console.log('Data successfully sent:', response);
           this.toastr.success(response.message, 'Verification Success');
           this.isRegistered = true;
+          sessionStorage.setItem('id', response.user.id);
+          sessionStorage.setItem('username', response.user.username);
           this.router.navigate(['/home']);
         },
         (error) => {
