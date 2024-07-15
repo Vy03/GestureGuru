@@ -15,7 +15,7 @@ export class WebcamService {
     this.baseUrl = this.config.baseUrl;
   }
 
-  attemptLesson(userId: number, lessonId: number, score: any){
+  attemptLesson(userId: any, lessonId: any, score: any){
     return this.http.put<any>(`${this.baseUrl}lesson/attempt/${userId}/${lessonId}`, score);
   }
 }

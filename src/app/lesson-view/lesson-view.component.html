@@ -1,35 +1,23 @@
 <div class="lesson-view-container">
-    <button class="back-btn" (click)="navigateToLand()"><i class="fas fa-arrow-left"></i> Back</button>
+    <button class="back-btn" (click)="navigateToLessons()"><i class="fas fa-arrow-left"></i> Back</button>
     <div class="content">
       <div class="sidebar">
         <div class="progress">
-          <div class="progress-item active">
-            <i class="fas fa-check-circle"></i> Getting Started <span class="level">Beginner</span>
-          </div>
-          <div class="progress-item">
-            <i class="fas fa-check-circle"></i> Hello <span class="level">Beginner</span>
-          </div>
-          <div class="progress-item">
-            <i class="fas fa-check-circle"></i> Thank you <span class="level">Beginner</span>
-          </div>
-          <div class="progress-item">
-            <i class="fas fa-circle"></i> Goodbye <span class="level">Beginner</span>
-          </div>
-          <div class="progress-item">
-            <i class="fas fa-circle"></i> Sorry <span class="level">Beginner</span>
-          </div>
-          <div class="progress-item">
-            <i class="fas fa-circle"></i> Okay <span class="level">Beginner</span>
-          </div>
-          <div class="progress-item">
-            <i class="fas fa-circle"></i> Okay <span class="level">Beginner</span>
-          </div>
+          <div *ngFor="let lesson of filteredLessons">
+            <div class="progress-item">
+              <i class="fas" [ngClass]="{
+                'fa-check-circle': lesson.status === 'Completed',
+                'fa-circle': lesson.status === 'Not Started'
+              }"></i> 
+              {{ lesson.title }} <span class="level">{{ lesson.type }}</span>
+            </div>
+          </div>          
         </div>
       </div>
       <div class="main">
         <div class="video-container">
           <video controls>
-            <source src="path_to_your_video.mp4" type="video/mp4">
+            <source src="{{videoPath}}" type="video/mp4">
             <track src="path_to_your_captions.vtt" kind="captions" srclang="en" label="English">
             Your browser does not support the video tag.
           </video>

@@ -81,15 +81,15 @@ body {
     font-size: 16px;
 }
 
-.type.beginner {
+.type.Beginner {
     background-color: #7aba7873;
 }
 
-.type.intermediate {
+.type.Intermediate {
     background-color: #ffc1077a;
 }
 
-.type.advanced {
+.type.Advanced {
     background-color: #dc354681;
 }
 
@@ -106,7 +106,7 @@ body {
 }
 
 .fa-solid.fa-bookmark.bookmarked {
-    color: #F3CA52; /* Change to desired yellow color */
+    color: #4442b4; /* Change to desired yellow color */
 }
 
 .progress {
@@ -116,11 +116,15 @@ body {
     border-radius: 50%;
 }
 
-.progress.completed {
+.progress.Completed {
     background-color: #28a745;
 }
 
-.progress.not-completed {
+.progress{
+    background-color: #6c757d;
+}
+
+.progress.Failed{
     background-color: #6c757d;
 }
 

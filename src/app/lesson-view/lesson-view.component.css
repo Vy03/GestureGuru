@@ -31,6 +31,18 @@
   .progress {
     padding: 20px;
   }
+
+  .Completed {
+    background-color: #28a745;
+  }
+
+  .Not{
+    background-color: #6c757d;
+  }
+
+  .Failed{
+    background-color: #6c757d;
+  }
   
   .progress-item {
     display: flex;

@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarComponent } from './../sidebar/sidebar.component';
@@ -8,7 +9,7 @@ import { LessonService } from './lessons.service';
   standalone: true,
   templateUrl: './lessons.component.html',
   styleUrls: ['./lessons.component.css'],
-  imports: [SidebarComponent]
+  imports: [SidebarComponent, NgFor]
 })
 export class LessonsComponent implements OnInit {
   bookmarkedLessons: string[] = [];
@@ -16,7 +17,7 @@ export class LessonsComponent implements OnInit {
   userName: string | null = sessionStorage.getItem('username');
   profile: string | null = sessionStorage.getItem('userImage');
 
-  lessonList = [];
+  lessonList: any[] = [];
   constructor(
     private router: Router,
     private lessonService: LessonService // Corrected service name
@@ -29,9 +30,11 @@ export class LessonsComponent implements OnInit {
   loadData(): void {
     console.log(this.userId);
     if (this.userId) {
-      this.lessonService.browseLessons({"userId":8}).subscribe(
+      this.lessonService.browseLessons({"userId":parseInt(this.userId)}).subscribe(
         (response) => {
           console.log('Response:', response);
+          this.lessonList = response.lessons;
+          console.log(this.lessonList)
         },
         (error: any) => {
           console.error('Error:', error);
@@ -40,16 +43,22 @@ export class LessonsComponent implements OnInit {
     }
   }
 
-  toggleBookmark(lessonCode: string): void {
-    const index = this.bookmarkedLessons.indexOf(lessonCode);
-    if (index === -1) {
-      this.bookmarkedLessons.push(lessonCode);
-    } else {
-      this.bookmarkedLessons.splice(index, 1);
-    }
+  toggleBookmark(id: any, saved: boolean): void {
+    this.lessonService.saveLessons(this.userId, id)
+    .subscribe(response => {
+      if (saved) {
+        this.lessonList.find(lesson => lesson.id === id).saved = false;
+      } else {
+        this.lessonList.find(lesson => lesson.id === id).saved = true;
+      }
+    }, error => {
+      console.error('Failed to save lesson:', error);
+    });
   }
 
-  isBookmarked(lessonCode: string): boolean {
-    return this.bookmarkedLessons.includes(lessonCode);
+  detail(lessonTitle: string) {
+    console.log(`Clicked on lesson with Name: ${lessonTitle}`);
+
+    this.router.navigate(['/view', lessonTitle]);
   }
 }

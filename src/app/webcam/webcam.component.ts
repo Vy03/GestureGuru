@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { WebcamService } from './webcam.service';
 
 @Component({
   selector: 'app-webcam',
@@ -15,10 +16,15 @@ export class WebcamComponent implements AfterViewInit {
   private countdown: number = 3;
   public prediction: string = "0.00";
   public accuracyMessage: string = "";
+
+  public userId: string | null = sessionStorage.getItem('userId');
+  public userName: string | null = sessionStorage.getItem('username');
+  public profile: string | null = sessionStorage.getItem('userImage');
   constructor(
     private router: Router, 
     private http: HttpClient,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private webcamService: WebcamService,
   ) {}
 
   ngAfterViewInit(): void {
@@ -97,6 +103,7 @@ export class WebcamComponent implements AfterViewInit {
         console.log(this.prediction)
         console.log(parseFloat(this.prediction))
         this.updateAccuracyMessage()
+        this.webcamService.attemptLesson(this.userId, 1, {score: parseFloat(this.prediction)})
         this.router.navigate(['/webcam']);
       },
       (error) => {
