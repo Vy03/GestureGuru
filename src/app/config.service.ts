@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ConfigService {
-  baseUrl = 'https://0996-158-140-174-21.ngrok-free.app/gesture-guru/';
+  baseUrl = 'https://a08f-114-122-7-105.ngrok-free.app/gesture-guru/';
 
   constructor() {}
 }

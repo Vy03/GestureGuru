@@ -6,23 +6,19 @@
     </header>
     <div class="profile-header">
       <img src="assets/default_profile.jpeg" alt="Profile Photo" class="profile-photo">
-      <div>
-        <h2>Helena Hills</h2>
+      <!-- <div *ngIf="user">
+        <h2>{{ user.email }}</h2>
         <a href="#">Change profile photo</a>
-      </div>
+      </div> -->
     </div>
-    <form>
+    <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" value="@username123">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" value="email@domain.com">
+        <input type="text" id="username" formControlName="username" placeholder="johnsmith">
       </div>
       <div class="form-group">
         <label for="bio">Bio</label>
-        <textarea id="bio" name="bio" style="height: 180px;">Lorem ipsum dolor sit amet</textarea>
+        <textarea id="bio" formControlName="bio" style="height: 180px;" placeholder="lorem ipsum"></textarea>
       </div>
       <button type="submit" class="save-button">Save changes</button>
     </form>
