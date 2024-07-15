@@ -5,23 +5,24 @@
       <h1>Change Email</h1>
     </header>
     
-    <form>
+    <form [formGroup]="emailForm" (ngSubmit)="onSubmitEmail()">
       <div class="form-group">
         <label for="email">Enter your new email</label>        
         <div class="contain-otp">
-          <input type="email" id="email" name="email" value="email@domain.com">
+          <input type="email" id="email" formControlName="email" value="serafina.salimsu888@gmail.com">
           <button type="submit" class="save-button">Confirm email</button>
       </div>
       </div>
+    </form>
+    <form [formGroup]="otpForm" (ngSubmit)="onSubmitOTP()">
       <div class="form-group">
         <label for="otp">Enter your OTP</label>
         <div class="contain-otp">
-            <input id="otp" name="otp" class="otp">
-            <button type="submit" class="save-button">Send code</button>
+          <input id="otp" formControlName="otp" class="otp">
+          <button type="button" class="save-button" (click)="requestOTP()">Send code</button>
         </div>
-        
       </div>
-      <button type="submit" class="save-button">Confirm</button>
+      <button type="submit" class="save-button">Submit</button>
     </form>
   </div>
 </div>

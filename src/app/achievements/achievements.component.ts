@@ -10,9 +10,41 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
     imports: [SidebarComponent, CommonModule]
 })
 export class AchievementsComponent {
-    achievements = Array(12).fill({
-        title: 'Perfection',
-        progress: '1/10',
-        description: 'Achieve 100% accuracy 10 times'
-      });
+    achievements = [
+        {
+          title: 'Novice',
+          progress: '',
+          description: 'Attempted 3 lessons'
+        },
+        {
+          title: 'Rookie',
+          progress: '',
+          description: 'Attempted 5 lessons'
+        },
+        {
+          title: 'Junior',
+          progress: '',
+          description: 'Attempted 7 lessons'
+        },
+        {
+          title: 'Seasoned',
+          progress: '',
+          description: 'Attempted 9 lessons'
+        },
+        {
+          title: 'Skilled',
+          progress: '',
+          description: 'Attempted 11 lessons'
+        },
+        {
+          title: 'Legendary',
+          progress: '',
+          description: 'Attempted 13 lessons'
+        },
+        {
+          title: 'Conqueror',
+          progress: '',
+          description: 'Attempted 15 lessons'
+        },
+    ]
 }
