@@ -1,47 +1,76 @@
 <div class="signup-container">
-  <div class="signup-form" >
-    
-    <div class="logo-container">
-      <div class="logo">
-        <img src="assets/logo.jpeg" alt="Logo" width="50" height="50" (click)="navigateToLand()">
+  <!-- Sign-up Form -->
+  <ng-container *ngIf="!isRegistered">
+    <div class="signup-form">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="assets/logo.jpeg" alt="Logo" width="50" height="50" (click)="navigateToLand()">
+        </div>
+        <div class="content">
+          <h2>Sign Up</h2>
+          <p>Enter your credentials below</p>
+        </div>
       </div>
-      <div class="content">
-        <h2>Sign Up</h2>
-        <p>Enter your credentials below</p>
-      </div>
-    </div>      
 
-    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-      <ul class="form-list">
-        <li class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" formControlName="username" class="form-control" placeholder="@johnsmith">
-        </li>
-  
-        <li class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" formControlName="email" class="form-control" placeholder="johnsmith@example.com">
-        </li>
-        
-        <li class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
-        </li>
-        
-        <li class="form-group">
-          <label for="confirm-password">Confirm Password</label>
-          <input type="password" id="confirm-password" formControlName="confirmPassword" class="form-control" placeholder="Confirm your password">
-        </li>
-      </ul>
-      
-      <button class="signup-button" type="submit" >Sign up</button>
-    </form>
-<!-- 
-    <p style="text-align: center;">or continue with</p>
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <ul class="form-list">
+          <li class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" formControlName="username" class="form-control" placeholder="@johnsmith">
+          </li>
 
-    <button class="google-button" (click)="navigateToSetup()" >Sign up with Google</button> -->
-  
-        <p>Already have an account? <a class="login" (click)="navigateToLogin()">Click here</a></p>
+          <li class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" class="form-control" placeholder="johnsmith@example.com">
+          </li>
+          
+          <li class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
+          </li>
+          
+          <li class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" formControlName="confirmPassword" class="form-control" placeholder="Confirm your password">
+          </li>
+        </ul>
+        
+        <button class="signup-button" type="submit">Sign up</button>
+      </form>
+
+      <p>Already have an account? <a class="login" (click)="navigateToLogin()">Click here</a></p>
     </div>
+  </ng-container>
+
+  <!-- OTP Form -->
+  <ng-container *ngIf="isRegistered">
+    <div class="otp-form">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="assets/logo.jpeg" alt="Logo" width="50" height="50" (click)="navigateToLand()">
+        </div>
+        <div class="content">
+          <h2>Enter OTP</h2>
+          <p>Enter the OTP sent to your email</p>
+        </div>
+      </div>
+      
+
+      <form [formGroup]="otpForm" (ngSubmit)="onOtpSubmit()">
+        <ul class="list-unstyled">
+          <li class="form-group">
+            <label for="otp">Enter your OTP</label>
+            <div class="d-flex row">
+              <input class="form-control col-8" id="otp" name="otp" formControlName="otp">
+              <button type="button" class="col-4 otp-button" (click)="onOtpSend()">Send code</button>
+            </div> 
+          </li>
+          <li class="form-group">
+            <button type="submit" class="save-button">Confirm</button>
+          </li>
+        </ul>
+      </form>
+      
+    </div>
+  </ng-container>
 </div>
-  

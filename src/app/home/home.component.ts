@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -11,6 +10,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  userId = sessionStorage.getItem('id');
+  userName = sessionStorage.getItem('username');
+  profile: string | null = sessionStorage.getItem('imagepath');
+
   lessons = [
     { title: 'Row 1', difficulty: 123, status: 'green' },
     { title: 'Row 2', difficulty: 456, status: 'yellow' },
@@ -36,6 +39,11 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  getUserProfilePictureUrl(): string {
+    const path = this.profile ? this.profile : 'assets/default_profile.jpeg'
+    return path;
+  }
 
   navigateToLogin() {
     this.router.navigate(['/login']);

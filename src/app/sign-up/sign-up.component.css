@@ -27,6 +27,7 @@ body, html {
   width: 100%; 
   display: flex;
   justify-content: center; 
+  margin-top: 60px;
 }
   
   .signup-form {
@@ -90,6 +91,40 @@ body, html {
   
   .google-button:hover, .signup-button:hover {
     opacity: 0.8;
+  }
+
+  .otp{
+    display: flex; 
+    flex-direction: row;
+  }
+
+  .save-button{
+    width: 325px;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4442B4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .otp-button{
+    width: 120px;
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4442B4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;  
+  }
+  
+  .save-button:hover, .otp-button:hover {
+    background-color: #333399;
   }
 
   p a {
