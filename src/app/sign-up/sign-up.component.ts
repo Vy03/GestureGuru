@@ -102,9 +102,6 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('tes')
-    console.log(this.signUpForm)
-    console.log(this.signUpForm)
     if (this.signUpForm.valid) {
       this.signUpService.registerUser(this.signUpForm.value).subscribe(
         (response: any) => {

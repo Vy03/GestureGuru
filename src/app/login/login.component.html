@@ -9,27 +9,23 @@
           <h2>Login</h2>
           <p>Enter your credentials below</p>
         </div>
-      </div>      
-  
-      <ul class="form-list">
-        <li class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="form-control" placeholder="johnsmith@example.com">
-        </li>
+      </div>   
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">   
+        <ul class="form-list">
+          <li class="form-group">
+            <label for="username">Email</label>
+            <input type="text" id="username" formControlName="username" class="form-control" placeholder="johnsmith">
+          </li>
+          
+          <li class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
+          </li>
+        </ul>
         
-        <li class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
-        </li>
-      </ul>
+        <button class="login-button" type="submit">Log In</button>
+      </form>
       
-  
-      <button class="login-button" (click)="navigateToHome()">Log In</button>
-  
-      <p style="text-align: center;">or continue with</p>
-  
-      <button class="google-button" (click)="navigateToHome()">Sign in with Google</button>
-  
       <p>Don't have an account? <a class="sign-up" (click)="navigateToSignup()">Click here</a></p>
     </div>
   </div>
