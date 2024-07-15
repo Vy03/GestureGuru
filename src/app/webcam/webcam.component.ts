@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { WebcamService } from './webcam.service';
 
 @Component({
@@ -31,6 +32,7 @@ export class WebcamComponent implements AfterViewInit, OnInit {
     private cdr: ChangeDetectorRef,
     private webcamService: WebcamService,
     private route: ActivatedRoute, 
+    private toastr: ToastrService,
   ) {}
 
   ngOnInit(): void {
@@ -101,7 +103,7 @@ export class WebcamComponent implements AfterViewInit, OnInit {
           console.log('Stopping recording');
           
           this.mediaRecorder.stop();
-        }, 5000);
+        }, 3000);
           }
     }, 1000);
   }
@@ -111,18 +113,28 @@ export class WebcamComponent implements AfterViewInit, OnInit {
     this.http.post(url, { video: base64Data }).subscribe(
       (response: any) => {
         console.log('Server response:', response.Prediction);
-        this.prediction = response['Prediction']; 
-        console.log(this.prediction)
-        console.log(parseFloat(this.prediction))
-        this.updateAccuracyMessage()
-        this.webcamService.attemptLesson(this.userId, this.lessonId, {score: parseFloat(this.prediction)})
-        this.router.navigate(['/webcam']);
+        this.prediction = response['Prediction'];
+        this.updateAccuracyMessage();
+        if (parseInt(this.prediction) != 0){
+          this.webcamService.attemptLesson(this.userId, this.lessonId, { score: parseFloat(this.prediction) })
+            .subscribe(
+              () => {
+                console.log('Attempt lesson successful.');
+                this.router.navigate(['/webcam']);
+              },
+              (error) => {
+                console.error('Error in attemptLesson:', error);
+              }
+            );
+        } else {
+          this.toastr.warning("Error: No Hand Detected", "Error");
+        }
       },
       (error) => {
         console.error('Error sending video data to server:', error);
       }
     );
-  }  
+  }
   
   updateAccuracyMessage(): void {
     if (parseFloat(this.prediction) < 25) {
@@ -141,6 +153,6 @@ export class WebcamComponent implements AfterViewInit, OnInit {
   
 
   navigateToView(): void {
-    this.router.navigate(['/view']);
+    this.router.navigate(['/view', this.lessonName]);
   }
 }
