@@ -70,7 +70,7 @@ export class WebcamComponent implements AfterViewInit {
           reader.onloadend = () => {
             const base64String = reader.result as string;
             
-            console.log(base64String.split(',')[1]); // Log Base64 string
+            console.log(base64String.split(',')[1]);
             this.sendToServer(base64String.split(',')[1])
           };
           reader.readAsDataURL(blob);
